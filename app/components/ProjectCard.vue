@@ -14,11 +14,36 @@ const bg = computed(
       :to="`/work/${project.slug}`"
       class="block overflow-hidden rounded-3xl border border-white/10 bg-ink-900/60 transition-colors hover:border-white/25"
     >
-      <!-- Artwork: generated mock UI so there are no image assets to manage -->
       <div class="relative overflow-hidden" :class="large ? 'aspect-[16/10]' : 'aspect-[4/3]'">
         <div class="absolute inset-0 opacity-90 transition-transform duration-700 group-hover:scale-110" :style="{ background: bg }" />
         <div class="grid-bg absolute inset-0 opacity-60" />
-        <div class="absolute inset-x-8 bottom-0 top-10 translate-y-6 rounded-t-2xl border border-white/20 bg-ink-950/70 p-4 shadow-2xl backdrop-blur transition-transform duration-700 group-hover:translate-y-2">
+
+        <!-- Real screenshot in a browser frame -->
+        <div
+          v-if="project.image"
+          class="absolute inset-x-8 bottom-0 top-10 translate-y-6 overflow-hidden rounded-t-xl border border-white/20 bg-ink-950 shadow-2xl transition-transform duration-700 group-hover:translate-y-2"
+        >
+          <div class="flex h-6 items-center gap-1.5 bg-ink-900 px-3">
+            <span class="h-2 w-2 rounded-full bg-white/30" />
+            <span class="h-2 w-2 rounded-full bg-white/20" />
+            <span class="h-2 w-2 rounded-full bg-white/10" />
+          </div>
+          <img
+            :src="project.image"
+            :alt="l(project.title)"
+            loading="lazy"
+            decoding="async"
+            width="1280"
+            height="800"
+            class="h-full w-full object-cover object-top transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
+          >
+        </div>
+
+        <!-- Fallback artwork: generated mock UI -->
+        <div
+          v-else
+          class="absolute inset-x-8 bottom-0 top-10 translate-y-6 rounded-t-2xl border border-white/20 bg-ink-950/70 p-4 shadow-2xl backdrop-blur transition-transform duration-700 group-hover:translate-y-2"
+        >
           <div class="flex gap-1.5">
             <span class="h-2.5 w-2.5 rounded-full bg-white/30" />
             <span class="h-2.5 w-2.5 rounded-full bg-white/20" />

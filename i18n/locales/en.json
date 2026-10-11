@@ -21,11 +21,14 @@
   },
   "categories": {
     "all": "All",
-    "web": "Web",
-    "mobile": "Mobile",
-    "erp": "ERP",
-    "marketing": "Marketing",
-    "branding": "Branding"
+    "ecommerce": "E-commerce",
+    "mobility": "Transportation",
+    "realestate": "Real estate & construction",
+    "sports": "Sports & booking",
+    "tourism": "Tourism & travel",
+    "hr": "HR & business",
+    "creative": "Creative tools",
+    "erp": "ERP"
   },
   "seo": {
     "home": {
@@ -122,7 +125,11 @@
     "solution": "Our solution",
     "stack": "Tech & tools",
     "next": "Next project",
-    "notFound": "Project not found"
+    "notFound": "Project not found",
+    "visit": "Visit website",
+    "about": "About the project",
+    "highlights": "Highlights",
+    "market": "Market"
   },
   "erp": {
     "eyebrow": "Product · LIXSOS ERP",

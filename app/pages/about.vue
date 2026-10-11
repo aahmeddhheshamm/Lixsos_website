@@ -53,7 +53,7 @@ usePageSeo({
     </section>
 
     <!-- Timeline -->
-    <section class="container-x mt-32">
+    <!-- <section class="container-x mt-32">
       <SectionHeading :eyebrow="$t('about.journeyEyebrow')" :title="$t('about.journeyTitle')" />
       <ol class="relative mt-14 border-s border-white/10 ps-8 md:ps-12">
         <li v-for="(item, i) in timeline" :key="item.year" class="relative pb-12 last:pb-0" data-reveal :data-reveal-delay="i * 0.05">
@@ -62,10 +62,10 @@ usePageSeo({
           <p class="mt-2 text-lg text-slate-300">{{ l(item.text) }}</p>
         </li>
       </ol>
-    </section>
+    </section> -->
 
     <!-- Team -->
-    <section class="container-x mt-32">
+    <!-- <section class="container-x mt-32">
       <SectionHeading :eyebrow="$t('about.teamEyebrow')" :title="$t('about.teamTitle')" />
       <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <TiltCard v-for="(m, i) in team" :key="m.initials" class="rounded-3xl" data-reveal :data-reveal-delay="i * 0.08">
@@ -82,7 +82,7 @@ usePageSeo({
           </div>
         </TiltCard>
       </div>
-    </section>
+    </section> -->
 
     <CtaBanner :title="$t('about.cta')" />
   </div>
