@@ -1,0 +1,184 @@
+@import 'tailwindcss';
+
+/* `light:` variant for per-element light-mode tweaks, e.g. `light:text-emerald-600` */
+@custom-variant light (&:where(.light, .light *));
+
+@theme {
+  --color-ink-950: #070a1f;
+  --color-ink-900: #0b1030;
+  --color-ink-800: #12183f;
+  --color-ink-700: #1c2354;
+  --color-brand-cyan: #22d3ee;
+  --color-brand-blue: #3b82f6;
+  --color-brand-violet: #8b5cf6;
+  --color-muted: #9aa3c7;
+  /* Always-white (text on brand gradients) — does not flip in light mode */
+  --color-snow: #ffffff;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, sans-serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+}
+
+@layer base {
+  html {
+    background: var(--color-ink-950);
+    color: var(--color-slate-200);
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply font-sans bg-ink-950 text-slate-200 overflow-x-hidden;
+  }
+  ::selection {
+    background: rgb(34 211 238 / 0.35);
+    color: white;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-white;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .text-gradient {
+    background: linear-gradient(100deg, var(--color-brand-cyan), var(--color-brand-blue) 45%, var(--color-brand-violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-brand {
+    background: linear-gradient(110deg, var(--color-brand-cyan), var(--color-brand-blue) 50%, var(--color-brand-violet));
+  }
+  .glass {
+    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium uppercase tracking-[0.25em] text-brand-cyan;
+  }
+  .btn-primary {
+    background: linear-gradient(110deg, var(--color-brand-cyan), var(--color-brand-blue) 50%, var(--color-brand-violet));
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 text-snow shadow-[0_0_40px_-10px_rgba(34,211,238,0.7)] hover:shadow-[0_0_60px_-6px_rgba(139,92,246,0.8)] hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 border border-white/15 text-white hover:border-brand-cyan/60 hover:bg-white/5;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  .noise::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Reveal-on-scroll initial state (GSAP animates it in) */
+/* Only hidden when JS is running, so content stays visible to crawlers / no-JS */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Page transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ---------- Arabic / RTL ---------- */
+[dir='rtl'] {
+  --font-sans: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Cairo', 'Space Grotesk', ui-sans-serif, sans-serif;
+}
+/* Letter-spacing breaks Arabic letter joining; keep it only inside explicit LTR islands (logo, brand names) */
+[dir='rtl'] :where(*:not([dir='ltr'], [dir='ltr'] *)) {
+  letter-spacing: 0 !important;
+}
+/* Arabic glyphs are taller — give headings more room */
+[dir='rtl'] :is(h1, h2, h3) {
+  line-height: 1.3;
+}
+
+/* ---------- Light mode ----------
+ * Dark is the default. `html.light` re-maps the palette tokens, so existing classes flip automatically:
+ * "white" becomes the ink foreground and "ink" becomes the light surfaces.
+ * Use `text-snow` for text that must stay white (e.g. on brand gradients).
+ */
+:root {
+  --grid-line: rgb(255 255 255 / 0.04);
+  --logo-core: #ffffff;
+}
+html.light {
+  color-scheme: light;
+  --color-white: #0b1030;
+  --color-ink-950: #f6f7fc;
+  --color-ink-900: #ffffff;
+  --color-ink-800: #eef1f9;
+  --color-ink-700: #e1e5f2;
+  --color-muted: #525b86;
+  --color-slate-200: #1d2446;
+  --color-slate-300: #384066;
+  --color-slate-500: #8c93b2;
+  --color-brand-cyan: #06b6d4;
+  --grid-line: rgb(11 16 48 / 0.05);
+  --logo-core: #222a55;
+}
+html.light .glass {
+  background: rgb(255 255 255 / 0.72);
+}
+html.light .noise::after {
+  opacity: 0.02;
+}
+
+/* Circular reveal when switching theme (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
