@@ -28,6 +28,25 @@ automatically — `text-white` becomes the dark ink, `bg-ink-*` become light sur
 - Use `text-snow` for text that must stay white in both themes (e.g. on the brand gradient).
 - Use the `light:` variant for one-off tweaks, e.g. `text-emerald-400 light:text-emerald-600`.
 
+## Deploy (GitHub Pages + GoDaddy domain)
+
+Every push to `main` builds the static site and publishes it to GitHub Pages
+(`.github/workflows/deploy.yml`). Progress is in the repo's **Actions** tab; it is live about a minute later.
+
+- Repo → Settings → Pages: **Source = GitHub Actions**, custom domain `lixsos.com`, **Enforce HTTPS** on.
+- `public/CNAME` keeps the custom domain attached on every deploy.
+- GoDaddy DNS for `lixsos.com`:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | aahmeddhheshamm.github.io |
+
+After it's live, submit `https://lixsos.com/sitemap_index.xml` in Google Search Console.
+
 ## Where to edit content
 
 There are two places, both bilingual:
