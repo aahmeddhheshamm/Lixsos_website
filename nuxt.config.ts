@@ -3,11 +3,18 @@ import { projects } from './app/data/projects'
 import { site } from './app/data/site'
 import { THEME_STORAGE_KEY } from './app/data/theme'
 
-const projectRoutes = projects.flatMap((p) => [`/work/${p.slug}`, `/ar/work/${p.slug}`])
+// GitHub Pages serves every page as /path/ (it redirects /path → /path/), so all URLs use a trailing slash
+const projectRoutes = projects.flatMap((p) => [`/work/${p.slug}/`, `/ar/work/${p.slug}/`])
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-10-01',
   devtools: { enabled: true },
+
+  experimental: {
+    defaults: {
+      nuxtLink: { trailingSlash: 'append' },
+    },
+  },
 
   modules: ['@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxtjs/robots'],
 
@@ -25,6 +32,7 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     // English at /, Arabic at /ar
     strategy: 'prefix_except_default',
+    trailingSlash: true,
     locales: [
       { code: 'en', language: 'en-US', name: 'English', dir: 'ltr', file: 'en.json' },
       { code: 'ar', language: 'ar-EG', name: 'العربية', dir: 'rtl', file: 'ar.json' },
@@ -37,11 +45,12 @@ export default defineNuxtConfig({
   site: {
     url: site.url,
     name: site.name.en,
+    trailingSlash: true,
   },
 
   sitemap: {
     // Dynamic case-study pages; the i18n integration adds hreflang alternates
-    urls: projects.map((p) => `/work/${p.slug}`),
+    urls: projects.map((p) => `/work/${p.slug}/`),
   },
 
   app: {
@@ -74,7 +83,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/ar', '/sitemap.xml', ...projectRoutes],
+      routes: ['/', '/ar/', '/sitemap.xml', ...projectRoutes],
     },
   },
 })
