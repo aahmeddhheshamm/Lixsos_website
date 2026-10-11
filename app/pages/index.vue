@@ -146,12 +146,12 @@ onBeforeUnmount(() => {
     </section>
 
     <!-- CLIENTS -->
-    <section class="mt-10" aria-labelledby="clients-title">
+    <!-- <section class="mt-10" aria-labelledby="clients-title">
       <p id="clients-title" class="container-x mb-8 text-center text-sm uppercase tracking-[0.3em] text-muted" data-reveal>
         {{ $t('home.trusted') }}
       </p>
       <ClientMarquee />
-    </section>
+    </section> -->
 
     <!-- STATS -->
     <section class="container-x mt-32">
