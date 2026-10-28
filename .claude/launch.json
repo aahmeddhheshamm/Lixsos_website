@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nuxt-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "static-build",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "serve",
+        ".output/public",
+        "-l",
+        "4173"
+      ],
+      "port": 4173
+    }
+  ]
+}

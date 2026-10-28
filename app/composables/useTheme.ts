@@ -9,34 +9,23 @@ export function useTheme() {
 
   const apply = (value: Theme) => {
     theme.value = value
-    document.documentElement.classList.toggle('light', value === 'light')
+    document.documentElement.classList.toggle('dark', value === 'dark')
     try {
       localStorage.setItem(THEME_STORAGE_KEY, value)
     } catch {}
   }
 
-  /** Switch theme with a circular reveal from `origin` where the View Transitions API is supported. */
-  const setTheme = (value: Theme, origin?: { x: number; y: number }) => {
+  /** Switch theme with a short cross-fade where the View Transitions API is supported. */
+  const setTheme = (value: Theme) => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (!document.startViewTransition || reduced) return apply(value)
-
-    const transition = document.startViewTransition(async () => {
+    document.startViewTransition(async () => {
       apply(value)
       await nextTick()
     })
-    const x = origin?.x ?? window.innerWidth / 2
-    const y = origin?.y ?? 0
-    const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y))
-    transition.ready.then(() => {
-      document.documentElement.animate(
-        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
-        { duration: 650, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)', pseudoElement: '::view-transition-new(root)' },
-      )
-    })
   }
 
-  const toggleTheme = (event?: MouseEvent) =>
-    setTheme(theme.value === 'dark' ? 'light' : 'dark', event ? { x: event.clientX, y: event.clientY } : undefined)
+  const toggleTheme = () => setTheme(theme.value === 'dark' ? 'light' : 'dark')
 
   return { theme, setTheme, toggleTheme }
 }

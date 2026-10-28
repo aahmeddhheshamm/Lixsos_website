@@ -1,122 +1,254 @@
 @import 'tailwindcss';
 
-/* `light:` variant for per-element light-mode tweaks, e.g. `light:text-emerald-600` */
-@custom-variant light (&:where(.light, .light *));
+/* `dark:` follows the `html.dark` class set by the theme toggle, not the OS setting */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/*
+ * LIXSOS visual world: banknote engraving, printed in the LIXSOS brand colours.
+ * Paper ground, navy ink, the logo's blue as the one interactive colour, violet for serial numerals,
+ * and the logo's cyan → blue → violet spectrum only in the guilloche line work. No glows or glass.
+ */
 @theme {
-  --color-ink-950: #070a1f;
-  --color-ink-900: #0b1030;
-  --color-ink-800: #12183f;
-  --color-ink-700: #1c2354;
-  --color-brand-cyan: #22d3ee;
-  --color-brand-blue: #3b82f6;
-  --color-brand-violet: #8b5cf6;
-  --color-muted: #9aa3c7;
-  /* Always-white (text on brand gradients) — does not flip in light mode */
-  --color-snow: #ffffff;
+  --color-paper: #f5f6fb;
+  --color-paper-2: #eaedf7;
+  --color-paper-3: #ffffff;
+  --color-ink: #11163a;
+  --color-ink-soft: #50577f;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-navy: #0e1330;
+  --color-accent: #7c3aed;
+  --color-cyan: #22d3ee;
+  --color-blue: #3b82f6;
+  --color-violet: #8b5cf6;
+  --color-rule: rgb(17 22 58 / 0.16);
+  --color-rule-strong: rgb(17 22 58 / 0.45);
+  /* Always light, for text on the navy ERP sections in both themes */
+  --color-snow: #f5f6fb;
 
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, sans-serif;
+  --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Roboto Mono', ui-monospace, monospace;
 
-  --animate-marquee: marquee 40s linear infinite;
-  --animate-spin-slow: spin 18s linear infinite;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+  --ease-print: cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-14px); }
-  }
-  @keyframes pulse-ring {
-    0% { transform: scale(0.8); opacity: 0.8; }
-    100% { transform: scale(2.2); opacity: 0; }
-  }
+html.dark {
+  color-scheme: dark;
+  --color-paper: #0b1030;
+  --color-paper-2: #121941;
+  --color-paper-3: #0f1538;
+  --color-ink: #eef0fb;
+  --color-ink-soft: #9aa3c7;
+  --color-primary: #60a5fa;
+  --color-primary-hover: #93c5fd;
+  --color-navy: #151d4d;
+  --color-accent: #a78bfa;
+  --color-rule: rgb(238 240 251 / 0.14);
+  --color-rule-strong: rgb(238 240 251 / 0.42);
 }
 
 @layer base {
   html {
-    background: var(--color-ink-950);
-    color: var(--color-slate-200);
-    color-scheme: dark;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    color-scheme: light;
     -webkit-font-smoothing: antialiased;
+    scrollbar-color: var(--color-rule-strong) var(--color-paper);
   }
   body {
-    @apply font-sans bg-ink-950 text-slate-200 overflow-x-hidden;
+    @apply bg-paper font-sans text-ink overflow-x-hidden;
+    font-feature-settings: 'tnum' 0;
   }
   ::selection {
-    background: rgb(34 211 238 / 0.35);
-    color: white;
+    background: var(--color-primary);
+    color: var(--color-paper);
   }
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight text-white;
+    @apply font-display text-ink;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+  input, textarea {
+    caret-color: var(--color-primary);
   }
 }
 
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-[84rem] px-4 sm:px-8;
   }
-  .text-gradient {
-    background: linear-gradient(100deg, var(--color-brand-cyan), var(--color-brand-blue) 45%, var(--color-brand-violet));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+
+  /* Display sizes, set like engraved denominations */
+  .h-hero {
+    font-size: clamp(2.5rem, 5.4vw, 5.2rem);
+    font-weight: 300;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
   }
-  .bg-gradient-brand {
-    background: linear-gradient(110deg, var(--color-brand-cyan), var(--color-brand-blue) 50%, var(--color-brand-violet));
+  .h-section {
+    font-size: clamp(2.1rem, 4.2vw, 3.75rem);
+    line-height: 1.06;
   }
-  .glass {
-    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  .h-page {
+    font-size: clamp(2.5rem, 6.2vw, 5.75rem);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
   }
-  .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium uppercase tracking-[0.25em] text-brand-cyan;
+  /* The emphasised half of a heading: printed in the brand blue */
+  .hi {
+    color: var(--color-primary);
   }
-  .btn-primary {
-    background: linear-gradient(110deg, var(--color-brand-cyan), var(--color-brand-blue) 50%, var(--color-brand-violet));
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 text-snow shadow-[0_0_40px_-10px_rgba(34,211,238,0.7)] hover:shadow-[0_0_60px_-6px_rgba(139,92,246,0.8)] hover:-translate-y-0.5;
+
+  /* Serial numerals: the only place the mono face appears */
+  .serial {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
   }
-  .btn-ghost {
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 border border-white/15 text-white hover:border-brand-cyan/60 hover:bg-white/5;
+  /* Microtext rule: tiny repeated lettering used as a line, like the security text on a note */
+  .microtext {
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    line-height: 1;
+    white-space: nowrap;
+    /* Repeats wrap onto hidden lines, so the visible run always ends on a whole repeat */
+    display: flex;
+    flex-wrap: wrap;
+    height: 1em;
+    overflow: hidden;
+    color: var(--color-ink-soft);
+    opacity: 0.8;
   }
-  .grid-bg {
-    background-image:
-      linear-gradient(var(--grid-line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+
+  /* The note: a square panel framed by a fine double rule */
+  .note {
+    position: relative;
+    border: 1px solid var(--color-rule-strong);
+    box-shadow:
+      inset 0 0 0 5px var(--color-paper),
+      inset 0 0 0 6px var(--color-rule);
   }
-  .noise::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 100;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* Guilloche wave band, tinted with currentColor through a mask */
+  .band {
+    display: block;
+    height: 14px;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cg fill='none' stroke='black' stroke-width='0.7'%3E%3Cpath d='M0 7 C8 0 16 0 24 7 S40 14 48 7'/%3E%3Cpath d='M0 7 C8 14 16 14 24 7 S40 0 48 7'/%3E%3Cpath d='M0 3.5 C8 10.5 16 10.5 24 3.5 S40 -3.5 48 3.5'/%3E%3Cpath d='M0 10.5 C8 3.5 16 3.5 24 10.5 S40 17.5 48 10.5'/%3E%3C/g%3E%3C/svg%3E") repeat-x center / 48px 14px;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cg fill='none' stroke='black' stroke-width='0.7'%3E%3Cpath d='M0 7 C8 0 16 0 24 7 S40 14 48 7'/%3E%3Cpath d='M0 7 C8 14 16 14 24 7 S40 0 48 7'/%3E%3Cpath d='M0 3.5 C8 10.5 16 10.5 24 3.5 S40 -3.5 48 3.5'/%3E%3Cpath d='M0 10.5 C8 3.5 16 3.5 24 10.5 S40 17.5 48 10.5'/%3E%3C/g%3E%3C/svg%3E") repeat-x center / 48px 14px;
   }
+
+  /* Buttons: printed panels with square corners */
+  .btn {
+    @apply relative inline-flex min-h-12 items-center justify-center gap-3 px-6 text-[0.95rem] font-semibold transition-[background-color,color,box-shadow] duration-200;
+    border-radius: 2px;
+    background: var(--color-primary);
+    color: var(--color-paper);
+    box-shadow: inset 0 0 0 3px var(--color-primary), inset 0 0 0 4px color-mix(in oklab, var(--color-paper) 45%, transparent);
+  }
+  .btn:hover {
+    background: var(--color-primary-hover);
+    box-shadow: inset 0 0 0 3px var(--color-primary-hover), inset 0 0 0 4px color-mix(in oklab, var(--color-paper) 60%, transparent);
+  }
+  html.dark .btn {
+    color: var(--color-navy);
+  }
+  .btn-line {
+    @apply relative inline-flex min-h-12 items-center justify-center gap-3 px-6 text-[0.95rem] font-semibold transition-colors duration-200;
+    border-radius: 2px;
+    border: 1px solid var(--color-rule-strong);
+    color: var(--color-ink);
+  }
+  .btn-line:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  .btn[disabled] {
+    opacity: 0.55;
+    cursor: progress;
+  }
+
+  /* Buttons on the navy ERP sections */
+  .btn-snow,
+  .btn-snow-line {
+    display: inline-flex;
+    min-height: 3rem;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-radius: 2px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-snow {
+    background: var(--color-snow);
+    color: var(--color-navy);
+    box-shadow: inset 0 0 0 3px var(--color-snow), inset 0 0 0 4px rgb(14 19 48 / 0.3);
+  }
+  /* On navy, hover uses the light brand blue so every hover reads as the same colour */
+  .btn-snow:hover {
+    background: #60a5fa;
+    box-shadow: inset 0 0 0 3px #60a5fa, inset 0 0 0 4px rgb(14 19 48 / 0.3);
+  }
+  .btn-snow-line {
+    border: 1px solid rgb(245 246 251 / 0.5);
+    color: var(--color-snow);
+  }
+  .btn-snow-line:hover {
+    border-color: #60a5fa;
+    color: #60a5fa;
+  }
+
+  /* Text link that gains a second rule on hover: state shown by line form */
+  .link-rule {
+    @apply font-semibold;
+    text-decoration: underline;
+    text-decoration-color: var(--color-rule-strong);
+  }
+  .link-rule:hover {
+    color: var(--color-primary);
+    text-decoration-style: double;
+    text-decoration-color: currentColor;
+  }
+
+  /* Uncut sheet: cells packed edge to edge, separated only by hairline cut rules */
+  .sheet {
+    border-top: 1px solid var(--color-rule-strong);
+    border-inline-start: 1px solid var(--color-rule-strong);
+  }
+  .sheet > * {
+    border-inline-end: 1px solid var(--color-rule-strong);
+    border-bottom: 1px solid var(--color-rule-strong);
+  }
+
 }
 
-/* Reveal-on-scroll initial state (GSAP animates it in) */
-/* Only hidden when JS is running, so content stays visible to crawlers / no-JS */
-.js [data-reveal] {
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-/* Page transitions */
+/* Page transitions: a short fade, nothing more */
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+  transition: opacity 0.25s ease;
 }
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: translateY(16px);
-  filter: blur(6px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -125,60 +257,25 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
 }
 
 /* ---------- Arabic / RTL ---------- */
 [dir='rtl'] {
-  --font-sans: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Cairo', 'Space Grotesk', ui-sans-serif, sans-serif;
+  --font-sans: 'Noto Sans Arabic', 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Amiri', serif;
 }
 /* Letter-spacing breaks Arabic letter joining; keep it only inside explicit LTR islands (logo, brand names) */
 [dir='rtl'] :where(*:not([dir='ltr'], [dir='ltr'] *)) {
   letter-spacing: 0 !important;
 }
-/* Arabic glyphs are taller — give headings more room */
-[dir='rtl'] :is(h1, h2, h3) {
-  line-height: 1.3;
+/* Amiri sits taller and needs more leading */
+[dir='rtl'] :is(h1, h2, h3, .h-hero, .h-page, .h-section) {
+  line-height: 1.35;
+  font-weight: 700;
 }
 
-/* ---------- Light mode ----------
- * Dark is the default. `html.light` re-maps the palette tokens, so existing classes flip automatically:
- * "white" becomes the ink foreground and "ink" becomes the light surfaces.
- * Use `text-snow` for text that must stay white (e.g. on brand gradients).
- */
-:root {
-  --grid-line: rgb(255 255 255 / 0.04);
-  --logo-core: #ffffff;
-}
-html.light {
-  color-scheme: light;
-  --color-white: #0b1030;
-  --color-ink-950: #f6f7fc;
-  --color-ink-900: #ffffff;
-  --color-ink-800: #eef1f9;
-  --color-ink-700: #e1e5f2;
-  --color-muted: #525b86;
-  --color-slate-200: #1d2446;
-  --color-slate-300: #384066;
-  --color-slate-500: #8c93b2;
-  --color-brand-cyan: #06b6d4;
-  --grid-line: rgb(11 16 48 / 0.05);
-  --logo-core: #222a55;
-}
-html.light .glass {
-  background: rgb(255 255 255 / 0.72);
-}
-html.light .noise::after {
-  opacity: 0.02;
-}
-
-/* Circular reveal when switching theme (View Transitions API) */
+/* Theme switch: a quick cross-fade (View Transitions API) */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
+  animation-duration: 0.35s;
 }

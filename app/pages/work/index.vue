@@ -16,27 +16,27 @@ const filtered = computed(() =>
 
 <template>
   <div>
-    <PageHero :eyebrow="$t('work.eyebrow')" :title="$t('work.title')" :text="$t('work.text')">
-      <template #title>{{ $t('work.title') }} <span class="text-gradient">{{ $t('work.hi') }}</span></template>
+    <PageHero :title="$t('work.title')" :text="$t('work.text')">
+      <template #title>{{ $t('work.title') }} <span class="hi">{{ $t('work.hi') }}</span></template>
     </PageHero>
 
     <section class="container-x">
-      <div class="flex flex-wrap gap-2" role="tablist" :aria-label="$t('work.filter')">
+      <div class="flex flex-wrap gap-x-6 gap-y-2 border-b border-rule pb-4" role="group" :aria-label="$t('work.filter')">
         <button
           v-for="c in projectCategories"
           :key="c"
-          role="tab"
-          :aria-selected="active === c"
-          class="relative rounded-full border px-5 py-2 text-sm transition-all duration-300"
-          :class="active === c ? 'border-transparent bg-white text-ink-950' : 'border-white/15 text-slate-300 hover:border-white/40 hover:text-white'"
+          type="button"
+          class="filter py-1.5 text-[0.95rem]"
+          :class="active === c ? 'is-active font-semibold text-ink' : 'text-ink-soft hover:text-primary'"
+          :aria-pressed="active === c"
           @click="active = c"
         >
           {{ $t(`categories.${c}`) }}
         </button>
       </div>
 
-      <TransitionGroup tag="div" name="grid" class="relative mt-12 grid gap-8 md:grid-cols-2">
-        <ProjectCard v-for="p in filtered" :key="p.slug" :project="p" large />
+      <TransitionGroup tag="div" name="grid" class="sheet relative mt-10 grid sm:grid-cols-2 lg:grid-cols-3">
+        <ProjectCard v-for="p in filtered" :key="p.slug" :project="p" :index="projects.indexOf(p)" />
       </TransitionGroup>
     </section>
 
@@ -45,21 +45,23 @@ const filtered = computed(() =>
 </template>
 
 <style scoped>
-.grid-move,
-.grid-enter-active,
-.grid-leave-active {
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+/* Same line language as the nav: hover = one rule, selected = double rule */
+.filter {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.45em;
 }
-.grid-enter-from,
-.grid-leave-to {
+.filter:hover {
+  text-decoration-color: var(--color-rule-strong);
+}
+.filter.is-active {
+  text-decoration-style: double;
+  text-decoration-color: var(--color-primary);
+}
+.grid-enter-active {
+  transition: opacity 0.4s var(--ease-print);
+}
+.grid-enter-from {
   opacity: 0;
-  transform: scale(0.92) translateY(20px);
-}
-.grid-leave-active {
-  position: absolute;
-  width: calc(50% - 1rem);
-}
-@media (max-width: 767px) {
-  .grid-leave-active { width: 100%; }
 }
 </style>

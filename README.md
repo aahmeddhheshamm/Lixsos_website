@@ -1,6 +1,6 @@
 # LIXSOS Technologies — Website
 
-Dark-mode, animated portfolio site for LIXSOS (software development, digital marketing & LIXSOS ERP).
+Portfolio site for LIXSOS (software development, digital marketing & LIXSOS ERP).
 
 **Stack:** Nuxt 4 · @nuxtjs/i18n (English + Arabic/RTL) · Tailwind CSS v4 · GSAP ScrollTrigger · Lenis smooth scroll · @nuxtjs/sitemap · @nuxtjs/robots
 
@@ -14,19 +14,24 @@ npm run generate   # static site in .output/public (fully prerendered, SEO-frien
 
 ## Languages
 
-English is served at `/`, Arabic at `/ar` (right-to-left, Cairo + IBM Plex Sans Arabic fonts).
+English is served at `/`, Arabic at `/ar` (right-to-left, Amiri + Noto Sans Arabic fonts).
 The URL decides the language (no automatic redirects, which is best for SEO); visitors switch with the header button.
+
+## Look and feel
+
+The visual world is banknote engraving: security-paper ground, intaglio ink, hairline guilloche patterns,
+and one "denomination ink" per service (`app/data/inks.ts`). Product truth lives in `PRODUCT.md`.
 
 ## Light / dark mode
 
-Dark is the default; the sun/moon button in the header switches theme with a circular reveal animation.
+Light (the paper) is the default; the half-inked disc in the header switches theme.
 The choice is saved in `localStorage` and applied by an inline script before first paint (no flash).
 
-How it works (`app/assets/css/main.css`): `html.light` re-maps the palette tokens, so existing classes flip
-automatically — `text-white` becomes the dark ink, `bg-ink-*` become light surfaces, `border-white/10` becomes a dark hairline.
+How it works (`app/assets/css/main.css`): `html.dark` re-maps the palette tokens (`paper`, `ink`, `green`, `red`, `rule`),
+so classes like `bg-paper` and `text-ink` flip automatically.
 
-- Use `text-snow` for text that must stay white in both themes (e.g. on the brand gradient).
-- Use the `light:` variant for one-off tweaks, e.g. `text-emerald-400 light:text-emerald-600`.
+- Use `text-snow` for text that must stay light in both themes (e.g. on the green ERP sections).
+- Use the `dark:` variant for one-off tweaks.
 
 ## Deploy (GitHub Pages + GoDaddy domain)
 

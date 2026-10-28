@@ -12,7 +12,8 @@
     "switchTo": "العربية",
     "switchLabel": "Switch to Arabic",
     "themeDark": "Switch to dark mode",
-    "themeLight": "Switch to light mode"
+    "themeLight": "Switch to light mode",
+    "skip": "Skip to content"
   },
   "common": {
     "arrow": "→",
@@ -35,29 +36,29 @@
       "title": "Software Development, Digital Marketing & ERP Agency"
     },
     "services": {
-      "title": "Services — Web, Mobile, ERP & Digital Marketing",
-      "description": "Web development, mobile apps, LIXSOS ERP, digital marketing, branding and AI automation — everything your business needs under one roof."
+      "title": "Services: Web, Mobile, ERP & Digital Marketing",
+      "description": "Web development, mobile apps, LIXSOS ERP, digital marketing, branding and AI automation, everything your business needs under one roof."
     },
     "work": {
-      "title": "Our Work — Case Studies",
+      "title": "Our Work: Case Studies",
       "description": "Explore LIXSOS case studies: web platforms, mobile apps, ERP rollouts, marketing campaigns and brand identities for clients across the region."
     },
     "service": {
       "title": "{title} Services"
     },
     "project": {
-      "title": "{title} — {category} Case Study"
+      "title": "{title}: {category} Case Study"
     },
     "erp": {
-      "title": "LIXSOS ERP — All-in-One Business Management Software",
+      "title": "LIXSOS ERP: All-in-One Business Management Software",
       "description": "LIXSOS ERP unifies finance, inventory, sales & POS, purchasing, HR & payroll, CRM and manufacturing in one bilingual cloud platform."
     },
     "about": {
       "title": "About Us",
-      "description": "Meet LIXSOS Technologies — a team of engineers, designers and marketers building software, growth and ERP solutions from Cairo for the world."
+      "description": "Meet LIXSOS Technologies, a team of engineers, designers and marketers building software, growth and ERP solutions from Cairo for the world."
     },
     "contact": {
-      "title": "Contact Us — Start Your Project",
+      "title": "Contact Us: Start Your Project",
       "description": "Tell LIXSOS about your project. Get a free consultation and estimate for web, mobile, ERP or digital marketing within 48 hours."
     }
   },
@@ -65,7 +66,7 @@
     "eyebrow": "Software · Marketing · ERP",
     "headline": "We build digital products that",
     "words": "scale.,sell.,perform.,inspire.",
-    "intro": "LIXSOS is a software development & digital marketing agency. We design, engineer and grow web & mobile products — and power operations with our own",
+    "intro": "LIXSOS is a software development & digital marketing agency. We design, engineer and grow web & mobile products, and power operations with our own",
     "introErp": "LIXSOS ERP",
     "seeWork": "See our work",
     "bookCall": "Book a free call",
@@ -85,7 +86,7 @@
     "erpEyebrow": "Our product",
     "erpTitle": "Run your whole business on",
     "erpHi": "LIXSOS ERP.",
-    "erpText": "Finance, inventory, sales, HR and CRM — in one fast, bilingual platform built by the same team that builds your apps.",
+    "erpText": "Finance, inventory, sales, HR and CRM in one fast, bilingual platform built by the same team that builds your apps.",
     "erpDiscover": "Discover the ERP",
     "erpDemo": "Request a demo",
     "processEyebrow": "How we work",
@@ -107,7 +108,7 @@
     "title": "Engineering",
     "hi": "meets",
     "after": "growth.",
-    "text": "One partner for product engineering, growth marketing and business operations. Pick a service — or let us build the whole engine.",
+    "text": "One partner for product engineering, growth marketing and business operations. Pick a service, or let us build the whole engine.",
     "processEyebrow": "Process",
     "processTitle": "From idea to",
     "processHi": "impact.",
@@ -117,7 +118,7 @@
     "eyebrow": "Portfolio",
     "title": "Selected",
     "hi": "work.",
-    "text": "A selection of products, platforms and campaigns we’ve shipped with our clients — and the results they delivered.",
+    "text": "A selection of products, platforms and campaigns we’ve shipped with our clients, and the results they delivered.",
     "filter": "Filter projects",
     "next": "Your project could be next."
   },
@@ -152,7 +153,7 @@
     "eyebrow": "Product · LIXSOS ERP",
     "title": "One platform.",
     "hi": "Your whole business.",
-    "text": "Finance, inventory, sales, HR and CRM in one fast, bilingual platform — designed for growing companies in the region.",
+    "text": "Finance, inventory, sales, HR and CRM in one fast, bilingual platform, designed for growing companies in the region.",
     "demo": "Request a free demo",
     "pricing": "See pricing",
     "modulesEyebrow": "Modules",
@@ -163,7 +164,7 @@
     "whyTitle": "Built for how",
     "whyHi": "you",
     "whyAfter": "work.",
-    "whyText": "Because we also build custom software, your ERP can be extended with your own workflows, integrations and apps — without fighting the system.",
+    "whyText": "Because we also build custom software, your ERP can be extended with your own workflows, integrations and apps, without fighting the system.",
     "pricingEyebrow": "Pricing",
     "pricingTitle": "Plans that",
     "pricingHi": "scale with you.",
@@ -181,7 +182,8 @@
       "stock": "Stock value",
       "sales": "Monthly sales",
       "paid": "Paid",
-      "pending": "Pending"
+      "pending": "Pending",
+      "sample": "Sample data"
     }
   },
   "about": {
@@ -192,7 +194,7 @@
     "storyEyebrow": "Our story",
     "storyTitle": "The X in LIXSOS is where",
     "storyHi": "everything connects.",
-    "storyText": "Our logo is a circuit — lines from different directions meeting in one core. That’s how we work: software, marketing and operations connected in one team, so your product, your growth and your business systems all move in the same direction.",
+    "storyText": "Our logo is a circuit: lines from different directions meeting in one core. That’s how we work: software, marketing and operations connected in one team, so your product, your growth and your business systems all move in the same direction.",
     "valuesEyebrow": "Values",
     "valuesTitle": "What we stand for.",
     "journeyEyebrow": "Journey",
@@ -223,6 +225,7 @@
     "detailsPh": "Tell us about your goals, timeline and anything else we should know.",
     "send": "Send message",
     "sending": "Sending…",
+    "error": "Your message couldn’t be sent. Please try again, or email us directly.",
     "thanks": "Thanks, {name}!",
     "friend": "friend",
     "thanksText": "We got your message and will get back to you within 24 hours."

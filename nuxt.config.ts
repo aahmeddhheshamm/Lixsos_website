@@ -17,15 +17,23 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/fonts'],
+
+  // Fonts are downloaded at build time and served from the site itself (no third-party font requests)
+  fonts: {
+    defaults: { weights: [400, 500, 600, 700], subsets: ['latin', 'latin-ext', 'arabic'] },
+    families: [
+      { name: 'Roboto', provider: 'google', weights: [300, 400, 500, 600, 700] },
+      { name: 'Roboto Mono', provider: 'google', weights: [400, 500] },
+      { name: 'Amiri', provider: 'google', weights: [400, 700] },
+      { name: 'Noto Sans Arabic', provider: 'google' },
+    ],
+  },
 
   css: ['~/assets/css/main.css'],
 
   vite: {
     plugins: [tailwindcss()],
-    optimizeDeps: {
-      include: ['gsap', 'gsap/ScrollTrigger', 'lenis'],
-    },
   },
 
   i18n: {
@@ -59,24 +67,17 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      meta: [{ name: 'color-scheme', content: 'dark light' }],
+      meta: [{ name: 'color-scheme', content: 'light dark' }],
       script: [
-        // Runs before first paint: mark JS as available (scroll-reveal elements start hidden)
-        // and apply the saved light/dark theme so there is no flash of the wrong theme.
+        // Runs before first paint: apply dark unless the visitor chose light so there is no flash of the wrong theme.
         {
-          innerHTML: `(function(){var d=document.documentElement;d.classList.add('js');try{if(localStorage.getItem('${THEME_STORAGE_KEY}')==='light')d.classList.add('light')}catch(e){}})()`,
+          innerHTML: `(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('${THEME_STORAGE_KEY}')}catch(e){}if(t!=='light')d.classList.add('dark')})()`,
           tagPosition: 'head',
         },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Cairo:wght@500;600;700;800&display=swap',
-        },
       ],
     },
   },

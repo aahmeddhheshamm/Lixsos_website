@@ -45,12 +45,12 @@ export const projects: Project[] = [
     image: '/projects/al-shiaka.jpg',
     market: { en: 'Saudi Arabia', ar: 'السعودية' },
     summary: {
-      en: 'Online store for a Saudi menswear brand — thobes, shemaghs and accessories.',
-      ar: 'متجر إلكتروني لعلامة أزياء رجالية سعودية — ثياب وأشمغة وإكسسوارات.',
+      en: 'Online store for a Saudi menswear brand: thobes, shemaghs and accessories.',
+      ar: 'متجر إلكتروني لعلامة أزياء رجالية سعودية: ثياب وأشمغة وإكسسوارات.',
     },
     description: {
-      en: 'A bilingual e-commerce store for Al Shiaka, covering white, coloured and winter thobes, ghutras and shemaghs, loungewear, accessories and fragrances — with collections for men, kids and women.',
-      ar: 'متجر إلكتروني ثنائي اللغة للشياكة يضم الثياب البيضاء والملونة والشتوية، والغتر والأشمغة، وملابس الراحة والإكسسوارات والعطور — مع أقسام للرجال والأطفال والنساء.',
+      en: 'A bilingual e-commerce store for Al Shiaka, covering white, coloured and winter thobes, ghutras and shemaghs, loungewear, accessories and fragrances, with collections for men, kids and women.',
+      ar: 'متجر إلكتروني ثنائي اللغة للشياكة يضم الثياب البيضاء والملونة والشتوية، والغتر والأشمغة، وملابس الراحة والإكسسوارات والعطور، مع أقسام للرجال والأطفال والنساء.',
     },
     highlights: {
       en: ['Arabic & English storefront', 'Rich category navigation', 'Free shipping threshold', 'Product search'],
@@ -63,7 +63,7 @@ export const projects: Project[] = [
   {
     slug: 'al-jouf',
     title: { en: 'Al Jouf Store', ar: 'متجر الجوف' },
-    client: { en: 'JADCO — Al Jouf Agricultural', ar: 'جادكو — الجوف الزراعية' },
+    client: { en: 'JADCO (Al Jouf Agricultural)', ar: 'جادكو (الجوف الزراعية)' },
     category: 'ecommerce',
     url: 'https://aljouf.com',
     image: '/projects/al-jouf.jpg',
@@ -141,8 +141,8 @@ export const projects: Project[] = [
       ar: 'متجر إلكتروني لمنتجات الأظافر والرموش الاحترافية.',
     },
     description: {
-      en: 'An e-commerce store for Carmen’s professional nail and lash range — including a gel polish line of 100+ shades with an interactive colour chart.',
-      ar: 'متجر إلكتروني لمنتجات كارمن الاحترافية للأظافر والرموش — ومنها مجموعة جل بوليش بأكثر من 100 لون مع دليل ألوان تفاعلي.',
+      en: 'An e-commerce store for Carmen’s professional nail and lash range, including a gel polish line of 100+ shades with an interactive colour chart.',
+      ar: 'متجر إلكتروني لمنتجات كارمن الاحترافية للأظافر والرموش، ومنها مجموعة جل بوليش بأكثر من 100 لون مع دليل ألوان تفاعلي.',
     },
     highlights: {
       en: ['Separate nails & lashes stores', 'Colour chart', 'Newsletter sign-up', 'Free delivery threshold'],
@@ -164,8 +164,8 @@ export const projects: Project[] = [
       ar: 'تطبيق لتسوق ألعاب الأطفال مع التوصيل داخل الكويت.',
     },
     description: {
-      en: 'TOYZ lets parents order toys from an app and get them delivered to their door. Orders are checked against the shelf before payment — unavailable items are removed and the total recalculated, so customers never pay for what they don’t receive.',
-      ar: 'يتيح تويز للأهالي طلب الألعاب من التطبيق وتوصيلها إلى باب البيت. تتم مراجعة الطلب على الرف قبل الدفع — ويُحذف الصنف غير المتوفر ويُعاد حساب المبلغ، فلا يدفع العميل ثمن ما لم يصله.',
+      en: 'TOYZ lets parents order toys from an app and get them delivered to their door. Orders are checked against the shelf before payment; unavailable items are removed and the total recalculated, so customers never pay for what they don’t receive.',
+      ar: 'يتيح تويز للأهالي طلب الألعاب من التطبيق وتوصيلها إلى باب البيت. تتم مراجعة الطلب على الرف قبل الدفع، ويُحذف الصنف غير المتوفر ويُعاد حساب المبلغ، فلا يدفع العميل ثمن ما لم يصله.',
     },
     highlights: {
       en: ['iOS & Android apps', 'Stock check before payment', 'Home delivery', 'Arabic-first'],
@@ -189,8 +189,8 @@ export const projects: Project[] = [
       ar: 'تطبيق نقل ذكي يتفق فيه الراكب والسائق على الأجرة.',
     },
     description: {
-      en: 'Go Way is a ride-hailing platform for Egypt where riders and drivers negotiate the fare before the trip. Riders can choose a car, scooter or tuk-tuk and pay by cash, card or wallet — with separate apps for riders and drivers.',
-      ar: 'جو واي منصة نقل في مصر يتفاوض فيها الراكب والسائق على الأجرة قبل الرحلة. يمكن للراكب اختيار سيارة أو سكوتر أو توك توك والدفع نقدًا أو بالبطاقة أو المحفظة — مع تطبيقات منفصلة للركاب والسائقين.',
+      en: 'Go Way is a ride-hailing platform for Egypt where riders and drivers negotiate the fare before the trip. Riders can choose a car, scooter or tuk-tuk and pay by cash, card or wallet, with separate apps for riders and drivers.',
+      ar: 'جو واي منصة نقل في مصر يتفاوض فيها الراكب والسائق على الأجرة قبل الرحلة. يمكن للراكب اختيار سيارة أو سكوتر أو توك توك والدفع نقدًا أو بالبطاقة أو المحفظة، مع تطبيقات منفصلة للركاب والسائقين.',
     },
     highlights: {
       en: ['Rider & driver apps', 'Fare negotiation', 'Car, scooter & tuk-tuk', 'Cash, card & wallet'],
@@ -214,8 +214,8 @@ export const projects: Project[] = [
       ar: 'موقع تعريفي لشركة استشارات هندسية في الأنظمة الكهروميكانيكية والحماية من الحريق.',
     },
     description: {
-      en: 'A content-managed corporate website for Mito Consult, presenting its integrated engineering services — plumbing, fire protection, sanitary networks, water treatment and MEP supervision — along with its projects and clients.',
-      ar: 'موقع تعريفي بنظام إدارة محتوى لشركة ميتو يعرض خدماتها الهندسية المتكاملة — السباكة والحماية من الحريق وشبكات الصرف ومعالجة المياه والإشراف على الأعمال الكهروميكانيكية — إلى جانب مشاريعها وعملائها.',
+      en: 'A content-managed corporate website for Mito Consult, presenting its integrated engineering services (plumbing, fire protection, sanitary networks, water treatment and MEP supervision), along with its projects and clients.',
+      ar: 'موقع تعريفي بنظام إدارة محتوى لشركة ميتو يعرض خدماتها الهندسية المتكاملة (السباكة والحماية من الحريق وشبكات الصرف ومعالجة المياه والإشراف على الأعمال الكهروميكانيكية) إلى جانب مشاريعها وعملائها.',
     },
     highlights: {
       en: ['CMS-driven content', 'Projects & clients showcase', 'Full-screen hero slider', 'Consultation booking'],
@@ -264,8 +264,8 @@ export const projects: Project[] = [
       ar: 'وكالة سفر إلكترونية لحجز الطيران والفنادق والأنشطة.',
     },
     description: {
-      en: 'A booking platform for Thabat Aviation, a Saudi online travel agency — customers search and book flights, hotels and activities, browse deals and manage their bookings in Arabic or English.',
-      ar: 'منصة حجز لثبات للطيران، وكالة سفر إلكترونية سعودية — يبحث العملاء ويحجزون الرحلات والفنادق والأنشطة، ويتصفحون العروض ويديرون حجوزاتهم بالعربية أو الإنجليزية.',
+      en: 'A booking platform for Thabat Aviation, a Saudi online travel agency: customers search and book flights, hotels and activities, browse deals and manage their bookings in Arabic or English.',
+      ar: 'منصة حجز لثبات للطيران، وكالة سفر إلكترونية سعودية: يبحث العملاء ويحجزون الرحلات والفنادق والأنشطة، ويتصفحون العروض ويديرون حجوزاتهم بالعربية أو الإنجليزية.',
     },
     highlights: {
       en: ['Flight, hotel & activity search', 'Manage booking', 'Arabic & English', 'Multi-currency'],
@@ -284,12 +284,12 @@ export const projects: Project[] = [
     image: '/projects/hido.jpg',
     market: { en: 'Saudi Arabia', ar: 'السعودية' },
     summary: {
-      en: 'Local tourism app — discover Saudi Arabia with its people.',
-      ar: 'تطبيق سياحة محلية — اكتشف السعودية بأهلها.',
+      en: 'Local tourism app. Discover Saudi Arabia with its people.',
+      ar: 'تطبيق سياحة محلية. اكتشف السعودية بأهلها.',
     },
     description: {
-      en: 'HiDo connects travellers with authentic local experiences in Saudi Arabia: tours with Saudi hosts, stays in local homes and farms, and local activities — booked through the app.',
-      ar: 'يربط هايدو المسافرين بتجارب محلية أصيلة في السعودية: جولات برفقة مضيفين سعوديين، واستضافات في البيوت والمزارع، وأنشطة محلية — تُحجز عبر التطبيق.',
+      en: 'HiDo connects travellers with authentic local experiences in Saudi Arabia: tours with Saudi hosts, stays in local homes and farms, and local activities, booked through the app.',
+      ar: 'يربط هايدو المسافرين بتجارب محلية أصيلة في السعودية: جولات برفقة مضيفين سعوديين، واستضافات في البيوت والمزارع، وأنشطة محلية، تُحجز عبر التطبيق.',
     },
     highlights: {
       en: ['iOS & Android apps', 'Verified local hosts', 'Map-based booking', 'Secure payments'],
@@ -314,8 +314,8 @@ export const projects: Project[] = [
       ar: 'برنامج موارد بشرية متكامل للشركات الصغيرة والمتوسطة.',
     },
     description: {
-      en: 'HRlab automates routine HR tasks and gives employees self-service access to their data — covering personnel records, absences, time tracking, documents and training management.',
-      ar: 'يؤتمت HRlab مهام الموارد البشرية الروتينية ويمنح الموظفين وصولًا ذاتيًا لبياناتهم — ويشمل ملفات الموظفين والغياب وتتبع الوقت والمستندات وإدارة التدريب.',
+      en: 'HRlab automates routine HR tasks and gives employees self-service access to their data, covering personnel records, absences, time tracking, documents and training management.',
+      ar: 'يؤتمت HRlab مهام الموارد البشرية الروتينية ويمنح الموظفين وصولًا ذاتيًا لبياناتهم، ويشمل ملفات الموظفين والغياب وتتبع الوقت والمستندات وإدارة التدريب.',
     },
     highlights: {
       en: ['Employee self-service', 'Absence & time tracking', 'Document management', 'Multilingual'],
@@ -362,8 +362,8 @@ export const projects: Project[] = [
       ar: 'متجر لبطاقات العمل الرقمية الذكية ومنتجات NFC.',
     },
     description: {
-      en: 'An online store for Jamil, a Saudi brand of smart digital business cards — selling NFC cards, tags and stands that share your contact details with a tap, alongside the Jamil app.',
-      ar: 'متجر إلكتروني لجميل، علامة سعودية لبطاقات العمل الرقمية الذكية — تبيع بطاقات وملصقات وستاندات NFC تشارك بياناتك بلمسة، إلى جانب تطبيق جميل.',
+      en: 'An online store for Jamil, a Saudi brand of smart digital business cards, selling NFC cards, tags and stands that share your contact details with a tap, alongside the Jamil app.',
+      ar: 'متجر إلكتروني لجميل، علامة سعودية لبطاقات العمل الرقمية الذكية، تبيع بطاقات وملصقات وستاندات NFC تشارك بياناتك بلمسة، إلى جانب تطبيق جميل.',
     },
     highlights: {
       en: ['NFC cards, tags & stands', 'Companion mobile app', 'Arabic & English', 'Customer reviews'],
@@ -384,8 +384,8 @@ export const projects: Project[] = [
       ar: 'منصة لإنشاء أفاتار للميتافيرس لمجتمع NFT.',
     },
     description: {
-      en: 'A web app for the Meta Draculas community where users claim a free metaverse avatar in three stages — avatar, wallet address and Twitter verification.',
-      ar: 'تطبيق ويب لمجتمع ميتا دراكولاز يحصل فيه المستخدم على أفاتار مجاني للميتافيرس عبر ثلاث مراحل — الأفاتار ثم عنوان المحفظة ثم التحقق عبر تويتر.',
+      en: 'A web app for the Meta Draculas community where users claim a free metaverse avatar in three stages: avatar, wallet address and Twitter verification.',
+      ar: 'تطبيق ويب لمجتمع ميتا دراكولاز يحصل فيه المستخدم على أفاتار مجاني للميتافيرس عبر ثلاث مراحل: الأفاتار ثم عنوان المحفظة ثم التحقق عبر تويتر.',
     },
     highlights: {
       en: ['3-step claim flow', 'Wallet address capture', 'Twitter verification', 'Animated UI'],

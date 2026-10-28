@@ -1,80 +1,38 @@
 <script setup lang="ts">
 import type { Project } from '~/data/projects'
 
-const props = defineProps<{ project: Project; large?: boolean }>()
+const props = defineProps<{ project: Project; index?: number }>()
 const l = useL()
-const bg = computed(
-  () => `linear-gradient(135deg, ${props.project.gradient[0]}, ${props.project.gradient[1]})`,
-)
 </script>
 
 <template>
-  <TiltCard :max="5" class="rounded-3xl">
-    <NuxtLinkLocale
-      :to="`/work/${project.slug}`"
-      class="block overflow-hidden rounded-3xl border border-white/10 bg-ink-900/60 transition-colors hover:border-white/25"
-    >
-      <div class="relative overflow-hidden" :class="large ? 'aspect-[16/10]' : 'aspect-[4/3]'">
-        <div class="absolute inset-0 opacity-90 transition-transform duration-700 group-hover:scale-110" :style="{ background: bg }" />
-        <div class="grid-bg absolute inset-0 opacity-60" />
-
-        <!-- Real screenshot in a browser frame -->
-        <div
-          v-if="project.image"
-          class="absolute inset-x-8 bottom-0 top-10 translate-y-6 overflow-hidden rounded-t-xl border border-white/20 bg-ink-950 shadow-2xl transition-transform duration-700 group-hover:translate-y-2"
-        >
-          <div class="flex h-6 items-center gap-1.5 bg-ink-900 px-3">
-            <span class="h-2 w-2 rounded-full bg-white/30" />
-            <span class="h-2 w-2 rounded-full bg-white/20" />
-            <span class="h-2 w-2 rounded-full bg-white/10" />
-          </div>
-          <img
-            :src="project.image"
-            :alt="l(project.title)"
-            loading="lazy"
-            decoding="async"
-            width="1280"
-            height="800"
-            class="h-full w-full object-cover object-top transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
-          >
-        </div>
-
-        <!-- Fallback artwork: generated mock UI -->
-        <div
-          v-else
-          class="absolute inset-x-8 bottom-0 top-10 translate-y-6 rounded-t-2xl border border-white/20 bg-ink-950/70 p-4 shadow-2xl backdrop-blur transition-transform duration-700 group-hover:translate-y-2"
-        >
-          <div class="flex gap-1.5">
-            <span class="h-2.5 w-2.5 rounded-full bg-white/30" />
-            <span class="h-2.5 w-2.5 rounded-full bg-white/20" />
-            <span class="h-2.5 w-2.5 rounded-full bg-white/10" />
-          </div>
-          <div class="mt-4 h-3 w-1/2 rounded bg-white/25" />
-          <div class="mt-2 h-2 w-3/4 rounded bg-white/10" />
-          <div class="mt-5 grid grid-cols-3 gap-2">
-            <div v-for="r in project.results" :key="r.value" class="rounded-lg bg-white/5 p-2">
-              <div class="font-display text-sm font-semibold text-white" dir="ltr">{{ r.value }}</div>
-              <div class="mt-0.5 truncate text-[0.6rem] text-white/50">{{ l(r.label) }}</div>
-            </div>
-          </div>
-        </div>
-        <span class="absolute start-4 top-4 rounded-full bg-black/30 px-3 py-1 text-xs font-medium text-snow backdrop-blur">
-          {{ $t(`categories.${project.category}`) }}
-        </span>
+  <NuxtLinkLocale :to="`/work/${project.slug}`" class="sheet-cell group block p-5 transition-colors duration-300 hover:bg-paper-3 sm:p-6">
+    <div class="relative aspect-[16/10] overflow-hidden border border-rule bg-paper-2">
+      <img
+        v-if="project.image"
+        :src="project.image"
+        :alt="l(project.title)"
+        loading="lazy"
+        decoding="async"
+        width="1280"
+        height="800"
+        class="h-full w-full object-cover object-top transition-transform duration-700 ease-[var(--ease-print)] group-hover:scale-[1.025]"
+      >
+      <div v-else class="grid h-full place-items-center p-6 text-center">
+        <span class="font-display text-3xl text-ink-soft">{{ l(project.client) }}</span>
       </div>
-
-      <div class="flex items-start justify-between gap-4 p-6">
-        <div>
-          <h3 class="text-xl font-semibold md:text-2xl">{{ l(project.title) }}</h3>
-          <p class="mt-2 text-sm text-muted">{{ l(project.summary) }}</p>
-        </div>
-        <span
-          class="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/15 text-white transition-all duration-300 rtl:-scale-x-100 group-hover:rotate-[-45deg] rtl:group-hover:rotate-45 group-hover:border-transparent group-hover:bg-white group-hover:text-ink-950"
-          aria-hidden="true"
-        >
-          →
-        </span>
+    </div>
+    <div class="mt-5 flex items-start justify-between gap-4">
+      <div class="min-w-0">
+        <h3 class="mt-2 text-[1.6rem] leading-tight">{{ l(project.title) }}</h3>
+        <p class="mt-2 line-clamp-2 text-[0.95rem] leading-relaxed text-ink-soft">{{ l(project.summary) }}</p>
       </div>
-    </NuxtLinkLocale>
-  </TiltCard>
+      <svg viewBox="0 0 24 24" class="mt-7 h-5 w-5 shrink-0 text-ink-soft transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary rtl:-scale-x-100 rtl:group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M4 12h15M13 6l6 6-6 6" />
+      </svg>
+    </div>
+    <p class="mt-4 text-sm text-ink-soft">
+      {{ $t(`categories.${project.category}`) }}<template v-if="project.market"> · {{ l(project.market) }}</template>
+    </p>
+  </NuxtLinkLocale>
 </template>

@@ -1,19 +1,15 @@
 <script setup lang="ts">
-withDefaults(defineProps<{ eyebrow?: string; title: string; text?: string; center?: boolean }>(), {
+withDefaults(defineProps<{ title: string; text?: string; center?: boolean }>(), {
   center: false,
 })
 </script>
 
 <template>
   <div :class="center ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'">
-    <span v-if="eyebrow" class="eyebrow" data-reveal>
-      <span class="h-1.5 w-1.5 rounded-full bg-brand-cyan" />
-      {{ eyebrow }}
-    </span>
-    <h2 class="mt-5 text-4xl font-semibold leading-[1.05] md:text-6xl" data-reveal data-reveal-delay="0.1">
+    <h2 class="h-section">
       <slot name="title">{{ title }}</slot>
     </h2>
-    <p v-if="text" class="mt-5 text-lg leading-relaxed text-muted" data-reveal data-reveal-delay="0.2">
+    <p v-if="text" class="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft" :class="center ? 'mx-auto' : ''">
       {{ text }}
     </p>
   </div>

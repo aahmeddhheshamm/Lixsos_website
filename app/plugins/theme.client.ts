@@ -4,6 +4,6 @@
 export default defineNuxtPlugin(() => {
   onNuxtReady(() => {
     const { theme } = useTheme()
-    theme.value = document.documentElement.classList.contains('light') ? 'light' : 'dark'
+    theme.value = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
   })
 })

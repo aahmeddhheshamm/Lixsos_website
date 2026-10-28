@@ -1,0 +1,630 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T12:00:00Z",
+  "title": "Design System: LIXSOS Technologies",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "oklch(97.4% 0.007 277.2)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#252526",
+          "#414244",
+          "#606164",
+          "#818286",
+          "#a4a5a8",
+          "#c8c9cc",
+          "#eeeef0"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Paper Shade",
+        "canonical": "oklch(94.7% 0.014 272.7)",
+        "tonalRamp": [
+          "#0b0b0d",
+          "#242528",
+          "#404247",
+          "#5f6168",
+          "#7f828b",
+          "#a2a5ac",
+          "#c7c9cf",
+          "#edeef2"
+        ]
+      },
+      "paper-3": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Navy Ink",
+        "canonical": "oklch(22.0% 0.069 273.4)",
+        "tonalRamp": [
+          "#090b13",
+          "#202434",
+          "#3a415a",
+          "#575f82",
+          "#7580ac",
+          "#99a3c8",
+          "#c0c8e5",
+          "#e8eeff"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(46.8% 0.066 276.0)",
+        "tonalRamp": [
+          "#090b12",
+          "#212433",
+          "#3c4058",
+          "#595f80",
+          "#777fa9",
+          "#9ca3c6",
+          "#c2c8e4",
+          "#e9edff"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Brand Blue",
+        "canonical": "oklch(54.6% 0.215 262.9)",
+        "tonalRamp": [
+          "#020921",
+          "#0a2152",
+          "#183b89",
+          "#2658c4",
+          "#3877ff",
+          "#6aa1ff",
+          "#9cc8ff",
+          "#cfefff"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Brand Blue Deep",
+        "canonical": "oklch(48.8% 0.217 264.4)",
+        "tonalRamp": [
+          "#020922",
+          "#0c2053",
+          "#1b3b89",
+          "#2b57c5",
+          "#3e76ff",
+          "#6da0ff",
+          "#9ec7ff",
+          "#d0efff"
+        ]
+      },
+      "primary-light": {
+        "role": "primary",
+        "displayName": "Light Brand Blue",
+        "canonical": "oklch(71.4% 0.143 254.6)",
+        "tonalRamp": [
+          "#020b1a",
+          "#0d2543",
+          "#1c4371",
+          "#2d62a2",
+          "#4084d5",
+          "#72a8eb",
+          "#a3ccff",
+          "#d4f1ff"
+        ]
+      },
+      "navy": {
+        "role": "tertiary",
+        "displayName": "Navy",
+        "canonical": "oklch(20.1% 0.058 272.8)",
+        "tonalRamp": [
+          "#090b11",
+          "#212432",
+          "#3b4156",
+          "#58607d",
+          "#7781a5",
+          "#9ba4c3",
+          "#c1c8e1",
+          "#e9eeff"
+        ]
+      },
+      "accent": {
+        "role": "secondary",
+        "displayName": "Serial Violet",
+        "canonical": "oklch(54.1% 0.247 293.0)",
+        "tonalRamp": [
+          "#0d0422",
+          "#291454",
+          "#49278b",
+          "#6b3cc7",
+          "#8e54ff",
+          "#ac87ff",
+          "#cdb5ff",
+          "#f1e2ff"
+        ]
+      },
+      "cyan": {
+        "role": "tertiary",
+        "displayName": "Spectrum Cyan",
+        "canonical": "oklch(79.7% 0.134 211.5)",
+        "tonalRamp": [
+          "#000f13",
+          "#002c35",
+          "#004d5c",
+          "#007085",
+          "#0096af",
+          "#41b7cb",
+          "#88d8e8",
+          "#c4f9ff"
+        ]
+      },
+      "blue": {
+        "role": "tertiary",
+        "displayName": "Spectrum Blue",
+        "canonical": "oklch(62.3% 0.188 259.8)",
+        "tonalRamp": [
+          "#020a1f",
+          "#0a234c",
+          "#173f80",
+          "#255db7",
+          "#377def",
+          "#6ba4ff",
+          "#9dcaff",
+          "#d0f0ff"
+        ]
+      },
+      "violet": {
+        "role": "tertiary",
+        "displayName": "Spectrum Violet",
+        "canonical": "oklch(60.6% 0.219 292.7)",
+        "tonalRamp": [
+          "#0d0520",
+          "#28174f",
+          "#472d83",
+          "#6843bc",
+          "#8b5df5",
+          "#aa8cff",
+          "#ccb8ff",
+          "#f0e4ff"
+        ]
+      },
+      "snow": {
+        "role": "neutral",
+        "displayName": "Snow",
+        "canonical": "oklch(97.4% 0.007 277.2)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#252526",
+          "#414244",
+          "#606164",
+          "#818286",
+          "#a4a5a8",
+          "#c8c9cc",
+          "#eeeef0"
+        ]
+      },
+      "night-paper": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "oklch(19.1% 0.064 272.2)",
+        "tonalRamp": [
+          "#090b12",
+          "#202433",
+          "#3a4158",
+          "#57607f",
+          "#7580a9",
+          "#9aa4c6",
+          "#c0c8e3",
+          "#e8eeff"
+        ]
+      },
+      "night-paper-2": {
+        "role": "neutral",
+        "displayName": "Night Paper Shade",
+        "canonical": "oklch(23.4% 0.076 271.8)",
+        "tonalRamp": [
+          "#080b13",
+          "#1f2436",
+          "#39415c",
+          "#545f85",
+          "#7280b0",
+          "#97a3cc",
+          "#bec8e8",
+          "#e7eeff"
+        ]
+      },
+      "night-paper-3": {
+        "role": "neutral",
+        "displayName": "Night Paper Face",
+        "canonical": "oklch(21.4% 0.068 272.1)",
+        "tonalRamp": [
+          "#090b12",
+          "#202434",
+          "#3a4159",
+          "#565f82",
+          "#7480ab",
+          "#99a4c8",
+          "#bfc8e5",
+          "#e8eeff"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "oklch(95.7% 0.015 277.9)",
+        "tonalRamp": [
+          "#0b0b0d",
+          "#242528",
+          "#414247",
+          "#5f6168",
+          "#80828b",
+          "#a3a4ad",
+          "#c7c9cf",
+          "#edeef3"
+        ]
+      },
+      "night-ink-soft": {
+        "role": "neutral",
+        "displayName": "Night Soft Ink (Technologies Lavender)",
+        "canonical": "oklch(72.1% 0.053 274.0)",
+        "tonalRamp": [
+          "#090b11",
+          "#212431",
+          "#3c4154",
+          "#59607b",
+          "#7880a3",
+          "#9ca4c0",
+          "#c2c8df",
+          "#e9eefe"
+        ]
+      },
+      "night-primary-hover": {
+        "role": "primary",
+        "displayName": "Night Blue Hover",
+        "canonical": "oklch(80.9% 0.096 251.8)",
+        "tonalRamp": [
+          "#050c15",
+          "#152639",
+          "#294461",
+          "#3f648d",
+          "#5786b9",
+          "#82a9d4",
+          "#aeccef",
+          "#dcf1ff"
+        ]
+      },
+      "night-navy": {
+        "role": "tertiary",
+        "displayName": "Night Navy",
+        "canonical": "oklch(25.6% 0.089 271.5)",
+        "tonalRamp": [
+          "#080b15",
+          "#1e2438",
+          "#374060",
+          "#525f8b",
+          "#6f7fb7",
+          "#95a3d2",
+          "#bcc8ed",
+          "#e5eeff"
+        ]
+      },
+      "night-accent": {
+        "role": "secondary",
+        "displayName": "Night Violet",
+        "canonical": "oklch(70.9% 0.159 293.5)",
+        "tonalRamp": [
+          "#0c071a",
+          "#271d43",
+          "#453572",
+          "#664fa3",
+          "#886cd6",
+          "#a995ed",
+          "#ccbeff",
+          "#f0e7ff"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "rgb(17 22 58 / 0.16)"
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Cut Rule",
+        "canonical": "rgb(17 22 58 / 0.45)"
+      },
+      "night-rule": {
+        "role": "neutral",
+        "displayName": "Night Hairline Rule",
+        "canonical": "rgb(238 240 251 / 0.14)"
+      },
+      "night-rule-strong": {
+        "role": "neutral",
+        "displayName": "Night Cut Rule",
+        "canonical": "rgb(238 240 251 / 0.42)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Page Display",
+        "purpose": "Inner-page titles above a wave band; Roboto Light 300."
+      },
+      "headline": {
+        "displayName": "Hero Headline",
+        "purpose": "Home hero headline inside the note; Roboto Light 300."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Section headings and CTA title; Roboto 400."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Cards, stations, ledger rows, plan names, mobile menu."
+      },
+      "display-arabic": {
+        "displayName": "Arabic Display (Amiri)",
+        "purpose": "Replaces Roboto headings under RTL; 700 weight, 1.35 leading, no tracking."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text in Soft Ink."
+      },
+      "body-lead": {
+        "displayName": "Lead",
+        "purpose": "Intro paragraphs under headings, up to 1.25rem."
+      },
+      "body-arabic": {
+        "displayName": "Arabic Body",
+        "purpose": "Noto Sans Arabic text under RTL."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, field labels, link-rule text."
+      },
+      "serial": {
+        "displayName": "Serial",
+        "purpose": "Roboto Mono serial numerals in Serial Violet only."
+      },
+      "microtext": {
+        "displayName": "Microtext",
+        "purpose": "Repeated security lettering used as a line; aria-hidden."
+      }
+    },
+    "shadows": [
+      {
+        "name": "note-frame",
+        "value": "inset 0 0 0 5px var(--color-paper), inset 0 0 0 6px var(--color-rule)",
+        "purpose": "Inner hairline of the note's double-rule frame (with a 1px rule-strong border)."
+      },
+      {
+        "name": "button-inner-rule",
+        "value": "inset 0 0 0 3px var(--color-primary), inset 0 0 0 4px color-mix(in oklab, var(--color-paper) 45%, transparent)",
+        "purpose": "Engraved inner line on filled buttons; 60% on hover."
+      },
+      {
+        "name": "header-rest",
+        "value": "0 1px 0 var(--color-rule)",
+        "purpose": "Header bottom hairline at the top of the page."
+      },
+      {
+        "name": "header-scrolled",
+        "value": "0 1px 0 var(--color-rule-strong), 0 8px 24px -18px rgb(0 0 0 / 0.35)",
+        "purpose": "The only soft shadow; appears once content scrolls under the fixed header."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 1px 0 var(--color-primary)",
+        "purpose": "Doubles the blue bottom rule of a focused field."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-print",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The print-pass ease for rosette draw-in, ring emphasis, note turn-over, logo pop and menu entry."
+      },
+      {
+        "name": "rosette-print",
+        "value": "2.4s ease-print, staggered 0.18s per ring",
+        "purpose": "Rosette strokes draw in once on load."
+      },
+      {
+        "name": "note-turn-over",
+        "value": "0.9s ease-print rotateY(-88deg) to none",
+        "purpose": "Hero note turns over after a language switch."
+      },
+      {
+        "name": "state",
+        "value": "0.2s ease",
+        "purpose": "Colour, border and rule transitions on buttons, links, chips, fields."
+      },
+      {
+        "name": "page-fade",
+        "value": "opacity 0.25s ease",
+        "purpose": "Route transition."
+      },
+      {
+        "name": "theme-crossfade",
+        "value": "0.35s view transition",
+        "purpose": "Theme switch."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled action: Brand Blue with an engraved inner rule.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Start a project</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:2px;background:var(--color-primary, #2563eb);color:var(--color-paper, #f5f6fb);font:600 0.95rem Roboto,system-ui,sans-serif;text-decoration:none;box-shadow:inset 0 0 0 3px var(--color-primary, #2563eb),inset 0 0 0 4px color-mix(in oklab,var(--color-paper, #f5f6fb) 45%,transparent);transition:background-color .2s,box-shadow .2s}.ds-btn:hover{background:var(--color-primary-hover, #1d4ed8);box-shadow:inset 0 0 0 3px var(--color-primary-hover, #1d4ed8),inset 0 0 0 4px color-mix(in oklab,var(--color-paper, #f5f6fb) 60%,transparent)}.ds-btn:focus-visible{outline:2px solid var(--color-primary, #2563eb);outline-offset:3px}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action: a Cut Rule outline that turns Brand Blue on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">See our work</a>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:2px;border:1px solid rgb(17 22 58 / .45);color:var(--color-ink, #11163a);font:600 0.95rem Roboto,system-ui,sans-serif;text-decoration:none;transition:color .2s,border-color .2s}.ds-btn-line:hover{border-color:var(--color-primary, #2563eb);color:var(--color-primary, #2563eb)}.ds-btn-line:focus-visible{outline:2px solid var(--color-primary, #2563eb);outline-offset:3px}"
+    },
+    {
+      "name": "Snow Buttons on a Navy Note",
+      "kind": "button",
+      "refersTo": "button-snow",
+      "description": "The pair used on navy ERP notes; both hover to Light Brand Blue.",
+      "html": "<div class=\"ds-navy\"><a class=\"ds-btn-snow\" href=\"#\">Discover LIXSOS ERP</a> <a class=\"ds-btn-snow-line\" href=\"#\">Request a demo</a></div>",
+      "css": ".ds-navy{background:#0e1330;padding:24px;display:flex;gap:12px;flex-wrap:wrap}.ds-btn-snow,.ds-btn-snow-line{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:2px;font:600 0.95rem Roboto,system-ui,sans-serif;text-decoration:none;transition:background-color .2s,color .2s,border-color .2s}.ds-btn-snow{background:#f5f6fb;color:#0e1330;box-shadow:inset 0 0 0 3px #f5f6fb,inset 0 0 0 4px rgb(14 19 48 / .3)}.ds-btn-snow:hover{background:#60a5fa;box-shadow:inset 0 0 0 3px #60a5fa,inset 0 0 0 4px rgb(14 19 48 / .3)}.ds-btn-snow-line{border:1px solid rgb(245 246 251 / .5);color:#f5f6fb}.ds-btn-snow-line:hover{border-color:#60a5fa;color:#60a5fa}.ds-btn-snow:focus-visible,.ds-btn-snow-line:focus-visible{outline:2px solid #60a5fa;outline-offset:3px}"
+    },
+    {
+      "name": "Ruled Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "A form blank: bottom Cut Rule only, doubling in Brand Blue on focus, violet when invalid.",
+      "html": "<label class=\"ds-field\"><span>Email</span><input type=\"email\" required placeholder=\"you@company.com\"></label>",
+      "css": ".ds-field{display:block;max-width:22rem;font-family:Roboto,system-ui,sans-serif}.ds-field span{display:block;margin-bottom:.4rem;font-size:.875rem;font-weight:600;color:var(--color-ink, #11163a)}.ds-field input{width:100%;border:0;border-bottom:1px solid rgb(17 22 58 / .45);background:transparent;padding:.6rem 0;font-size:1.05rem;color:var(--color-ink, #11163a);outline:none;caret-color:var(--color-primary, #2563eb);transition:border-color .2s,box-shadow .2s}.ds-field input:focus{border-bottom-color:var(--color-primary, #2563eb);box-shadow:0 1px 0 var(--color-primary, #2563eb)}.ds-field input:user-invalid{border-bottom-color:var(--color-accent, #7c3aed)}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Toggle or radio label with 2px corners; selected fills Brand Blue.",
+      "html": "<span class=\"ds-chip\">Web</span> <span class=\"ds-chip is-on\">ERP</span>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid rgb(17 22 58 / .45);border-radius:2px;font:400 .9rem Roboto,system-ui,sans-serif;color:var(--color-ink, #11163a);transition:background-color .2s,color .2s,border-color .2s}.ds-chip.is-on{background:var(--color-primary, #2563eb);border-color:var(--color-primary, #2563eb);color:var(--color-paper, #f5f6fb)}"
+    },
+    {
+      "name": "Navigation Links",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Soft Ink links; hover turns Brand Blue with one rule, the current page carries a double blue rule.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"is-active\">Services</a><a href=\"#\">Work</a><a href=\"#\">ERP</a></nav>",
+      "css": ".ds-nav{display:flex;gap:28px;font:500 .95rem Roboto,system-ui,sans-serif}.ds-nav a{color:var(--color-ink-soft, #50577f);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.45em;transition:color .2s,text-decoration-color .2s}.ds-nav a:hover{color:var(--color-primary, #2563eb);text-decoration-color:rgb(17 22 58 / .45)}.ds-nav a.is-active{color:var(--color-ink, #11163a);text-decoration-style:double;text-decoration-color:var(--color-primary, #2563eb)}"
+    },
+    {
+      "name": "Note",
+      "kind": "card",
+      "refersTo": "note",
+      "description": "The signature container: square Paper White panel framed by a double rule.",
+      "html": "<div class=\"ds-note\"><h3>Ready to start?</h3><p>Tell us what you are building.</p></div>",
+      "css": ".ds-note{background:var(--color-paper-3, #ffffff);color:var(--color-ink, #11163a);padding:32px;border:1px solid rgb(17 22 58 / .45);box-shadow:inset 0 0 0 5px var(--color-paper, #f5f6fb),inset 0 0 0 6px rgb(17 22 58 / .16);font-family:Roboto,system-ui,sans-serif}.ds-note h3{margin:0;font-weight:400;font-size:2.1rem;letter-spacing:-.015em}.ds-note p{color:var(--color-ink-soft, #50577f);line-height:1.625}"
+    },
+    {
+      "name": "Uncut Sheet Cell",
+      "kind": "card",
+      "refersTo": "sheet-cell",
+      "description": "A project card on the uncut sheet: shared cut rules, violet mono serial, blue hover.",
+      "html": "<a class=\"ds-cell\" href=\"#\"><span class=\"ds-well\"></span><span class=\"ds-serial\">LX-003 · 2025</span><span class=\"ds-title\">Retail storefront</span></a>",
+      "css": ".ds-cell{display:block;max-width:20rem;padding:24px;background:var(--color-paper, #f5f6fb);border:1px solid rgb(17 22 58 / .45);color:var(--color-ink, #11163a);text-decoration:none;font-family:Roboto,system-ui,sans-serif;transition:background-color .3s}.ds-cell:hover{background:var(--color-paper-3, #ffffff)}.ds-well{display:block;aspect-ratio:16/10;background:var(--color-paper-2, #eaedf7);border:1px solid rgb(17 22 58 / .16)}.ds-serial{display:block;margin-top:20px;font:400 .72rem \"Roboto Mono\",ui-monospace,monospace;letter-spacing:.08em;color:var(--color-accent, #7c3aed);font-variant-numeric:tabular-nums}.ds-title{display:block;margin-top:8px;font-size:1.6rem;line-height:1.25;letter-spacing:-.015em;transition:color .2s}.ds-cell:hover .ds-title{color:var(--color-primary, #2563eb)}"
+    },
+    {
+      "name": "Link Rule",
+      "kind": "custom",
+      "refersTo": "link-rule",
+      "description": "Inline link whose single Cut Rule underline doubles and turns Brand Blue on hover.",
+      "html": "<a class=\"ds-link-rule\" href=\"#\">All services</a>",
+      "css": ".ds-link-rule{font:600 1rem Roboto,system-ui,sans-serif;color:var(--color-ink, #11163a);text-decoration:underline;text-decoration-color:rgb(17 22 58 / .45);text-underline-offset:.22em;text-decoration-thickness:1px}.ds-link-rule:hover{color:var(--color-primary, #2563eb);text-decoration-style:double;text-decoration-color:currentColor}"
+    },
+    {
+      "name": "Logo Wordmark",
+      "kind": "custom",
+      "refersTo": "logo",
+      "description": "The brand lockup text: light tracked LIXSOS with the gradient X, the one gradient on the site.",
+      "html": "<span class=\"ds-wordmark\" dir=\"ltr\"><span class=\"ds-wm\">LI<b>X</b>SOS</span><span class=\"ds-tech\">TECHNOLOGIES</span></span>",
+      "css": ".ds-wordmark{display:inline-block;line-height:1;color:var(--color-ink, #11163a);font-family:Roboto,system-ui,sans-serif}.ds-wm{display:block;font-size:1.45rem;font-weight:300;letter-spacing:.14em}.ds-wm b{font-weight:700;background:linear-gradient(100deg,#22d3ee,#3b82f6 50%,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}.ds-tech{display:block;margin-top:4px;font-size:.5rem;font-weight:500;letter-spacing:.5em;color:var(--color-ink-soft, #50577f)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Banknote Engraving",
+    "overview": "LIXSOS is printed like currency people trust, in the colours of its own logo. The ground is a cool, faintly lavender paper; text is a deep navy ink; one brand blue carries every action, emphasis and hover; violet prints serial numerals and markers. The logo's cyan → blue → violet spectrum appears only as engraved line work: the rings of the guilloche rosette, and the gradient of the logo mark and the wordmark's X. Arabic and English are the two faces of one note. In the dark theme the paper turns to a deep navy night note and the inks lift to stay legible on it.\n\nEverything is drawn with lines, not light. Panels are square, framed by a fine double rule; work is packed edge to edge as an uncut sheet separated by hairline cut rules; process is a row of fixed, numbered stations. Guilloche rosettes and wave bands are generated in SVG; bands are tinted through `currentColor`, so a band takes whatever ink its context sets. The ERP product prints on its own navy note, with snow text and snow buttons, in both themes. State is shown by line form (a single rule becomes a double rule) and by the one brand blue, rarely by fill and never by glow.\n\nMotion is a print pass: the rosette strokes draw in once on load, the hero note turns over when the language changes, pages cross-fade. There are no scroll reveals, smooth-scroll, rotating words, glass, blur or glows, and no gradients beyond the logo itself. Navy is a brand ground here, not an invitation to the neon-gradient agency hero with glass cards and particle canvases, which the world still rejects.",
+    "keyCharacteristics": [
+      "Cool paper ground, navy ink text, one brand blue for action, emphasis and every hover, violet for serial numerals.",
+      "The logo spectrum (cyan, blue, violet) lives only in rosette line work and the logo's own gradient.",
+      "Navy notes for the ERP product, in both themes.",
+      "Square-cornered panels framed by fine double rules; hairline cut rules between cells.",
+      "Roboto throughout for Latin (light 300 for hero and page titles, 400 for headings), Amiri and Noto Sans Arabic for Arabic, Roboto Mono only for serial numerals.",
+      "Flat paper; depth comes from paper tone and rule weight."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Brand Blue is the only action, emphasis and hover colour. Headings take one blue phrase at most; every hover on paper turns Brand Blue, and every hover on navy turns Light Brand Blue. No item has a hover colour of its own.",
+        "section": "colors"
+      },
+      {
+        "name": "The Violet Is For Numbers Rule",
+        "body": "Serial Violet marks numerals, station starts and negative or invalid states. It never fills a button or colours a heading.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Gradient Rule",
+        "body": "The logo mark and the wordmark's X carry the brand gradient (cyan → blue → violet); nothing else on the site uses a smooth gradient. Line hatching built with hard-stop repeating gradients is drawing, not a gradient, and is allowed.",
+        "section": "colors"
+      },
+      {
+        "name": "The Light Display Rule",
+        "body": "Only the hero headline and inner-page titles are set light (300); every other heading is regular (400). Weight, not a second family, separates the two.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Is A Serial Rule",
+        "body": "The mono face prints numerals only: serials, IDs, deltas. It never sets prose, labels or headings. (The wordmark is a brand asset and keeps its own light, tracked Roboto setting.)",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Faces Rule",
+        "body": "Under RTL the display face swaps to Amiri (700, line-height 1.35) and text to Noto Sans Arabic, and all letter-spacing is removed so Arabic letters stay joined. Tracking survives only inside explicit LTR islands.",
+        "section": "typography"
+      },
+      {
+        "name": "The Drawn Not Lit Rule",
+        "body": "Edges are drawn with rules. If a surface needs separation, change its paper tone or its rule weight; do not add a cast shadow, glow or blur.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do frame every primary panel as a note: square corners, 1px Cut Rule plus the inset hairline 5px inside.",
+      "Do pack collections edge to edge with shared hairline cut rules instead of gaps and floating cards.",
+      "Do show state with line form and the one blue: single rule to double rule, rule to blue rule, soft ink to Brand Blue.",
+      "Do use Brand Blue for every hover on paper and Light Brand Blue for every hover on navy.",
+      "Do print serials in Roboto Mono, Serial Violet, tabular numerals, `dir=\"ltr\"`.",
+      "Do keep the ERP product on navy notes with snow text and snow buttons in both themes.",
+      "Do draw ornament as SVG line art (guilloche rosettes, wave bands, 1px diagonal hatching).",
+      "Do use logical properties and flip directional arrows so every surface mirrors in RTL, and strip letter-spacing from Arabic text.",
+      "Do honour `prefers-reduced-motion`: the rosette appears fully printed and the note does not turn over."
+    ],
+    "donts": [
+      "Don't use smooth gradients anywhere except the logo mark and the wordmark X; the only other gradient-built fill allowed is hard-stop line hatching.",
+      "Don't use glows, glass, backdrop blur or particle canvases, on paper or on navy.",
+      "Don't fill text, buttons or backgrounds with cyan or the spectrum violet; they are rosette and logo inks only.",
+      "Don't give a service, card or link a hover colour of its own, or put more than one blue phrase in a heading.",
+      "Don't round panels, cards or images; 2px on buttons and chips is the most the system allows.",
+      "Don't set prose, labels or headings in the mono face, or set headings other than hero and page titles in the light weight.",
+      "Don't add scroll reveals, smooth-scroll or rotating words; motion is a single print pass, a page cross-fade and the language turn-over.",
+      "Don't cast soft drop shadows under panels; separate with paper tone and rule weight."
+    ]
+  }
+}
