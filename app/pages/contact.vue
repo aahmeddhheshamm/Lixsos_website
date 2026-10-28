@@ -10,9 +10,8 @@ usePageSeo({
 })
 
 const interests = computed(() => t('contact.interests').split(','))
-const budgets = ['< $5k', '$5k – $15k', '$15k – $50k', '$50k+']
 
-const form = reactive({ name: '', email: '', company: '', interests: [] as string[], budget: '', message: '' })
+const form = reactive({ name: '', email: '', company: '', interests: [] as string[], message: '' })
 const sent = ref(false)
 const sending = ref(false)
 const failed = ref(false)
@@ -34,7 +33,6 @@ const submit = async () => {
         email: form.email,
         company: form.company || '-',
         interests: form.interests.join(', ') || '-',
-        budget: form.budget || '-',
         message: form.message,
         _subject: `New project enquiry from ${form.name}`,
         _replyto: form.email,
@@ -112,16 +110,6 @@ const submit = async () => {
               >
                 {{ i }}
               </button>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend class="mb-3 text-sm font-semibold">{{ $t('contact.budget') }}</legend>
-            <div class="flex flex-wrap gap-2">
-              <label v-for="b in budgets" :key="b" class="chip cursor-pointer has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-primary" :class="{ 'is-on': form.budget === b }" dir="ltr">
-                <input v-model="form.budget" type="radio" name="budget" :value="b" class="sr-only">
-                {{ b }}
-              </label>
             </div>
           </fieldset>
 

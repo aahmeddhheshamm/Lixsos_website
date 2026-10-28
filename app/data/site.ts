@@ -22,10 +22,10 @@ export const site = {
 /** Labels come from i18n `nav.*` keys. */
 export const navLinks = [
   { key: 'home', to: '/' },
+   { key: 'about', to: '/about' },
   { key: 'services', to: '/services' },
   { key: 'work', to: '/work' },
   { key: 'erp', to: '/erp' },
-  { key: 'about', to: '/about' },
 ]
 
 export const stats: { value: number; suffix: string; label: L }[] = [
