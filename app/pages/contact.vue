@@ -3,6 +3,7 @@ import { site } from '~/data/site'
 
 const { t } = useI18n()
 const l = useL()
+const toast = useToast()
 
 usePageSeo({
   title: () => t('seo.contact.title'),
@@ -26,7 +27,7 @@ const submit = async () => {
   sending.value = true
   failed.value = false
   try {
-    const res = await $fetch<{ success: string | boolean }>(`https://formsubmit.co/ajax/${site.email}`, {
+    const raw = await $fetch<{ success: string | boolean } | string>(`https://formsubmit.co/ajax/${site.email}`, {
       method: 'POST',
       body: {
         name: form.name,
@@ -40,10 +41,14 @@ const submit = async () => {
         _captcha: 'false',
       },
     })
+    // FormSubmit doesn't always send a JSON content type, so the body can arrive as a string
+    const res = typeof raw === 'string' ? JSON.parse(raw) : raw
     if (String(res.success) !== 'true') throw new Error('FormSubmit rejected the submission')
     sent.value = true
+    toast.show(t('contact.thanksText'))
   } catch {
     failed.value = true
+    toast.show(t('contact.error'), 'error')
   } finally {
     sending.value = false
   }
@@ -117,8 +122,6 @@ const submit = async () => {
             <span>{{ $t('contact.details') }}</span>
             <textarea v-model="form.message" required rows="5" :placeholder="$t('contact.detailsPh')" />
           </label>
-
-          <p v-if="failed" class="text-accent" role="alert">{{ $t('contact.error') }}</p>
 
           <button type="submit" class="btn w-full md:w-auto" :disabled="sending">
             {{ sending ? $t('contact.sending') : $t('contact.send') }}

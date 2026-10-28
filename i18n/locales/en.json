@@ -227,7 +227,8 @@
     "error": "Your message couldn’t be sent. Please try again, or email us directly.",
     "thanks": "Thanks, {name}!",
     "friend": "friend",
-    "thanksText": "We got your message and will get back to you within 24 hours."
+    "thanksText": "We got your message and will get back to you within 24 hours.",
+    "close": "Close"
   },
   "footer": {
     "company": "Company",
