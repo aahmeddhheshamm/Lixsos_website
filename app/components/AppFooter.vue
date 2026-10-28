@@ -43,8 +43,8 @@ const year = new Date().getFullYear()
         <div class="md:col-span-2">
           <h3 class="text-sm font-semibold uppercase tracking-widest text-white">{{ $t('footer.services') }}</h3>
           <ul class="mt-4 space-y-3 text-sm text-muted">
-            <li v-for="s in services" :key="s.icon">
-              <NuxtLinkLocale to="/services" class="hover:text-white">{{ l(s.title) }}</NuxtLinkLocale>
+            <li v-for="s in services" :key="s.slug">
+              <NuxtLinkLocale :to="`/services/${s.slug}`" class="hover:text-white">{{ l(s.title) }}</NuxtLinkLocale>
             </li>
           </ul>
         </div>

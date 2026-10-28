@@ -1,10 +1,11 @@
 import tailwindcss from '@tailwindcss/vite'
 import { projects } from './app/data/projects'
-import { site } from './app/data/site'
+import { services, site } from './app/data/site'
 import { THEME_STORAGE_KEY } from './app/data/theme'
 
 // GitHub Pages serves every page as /path/ (it redirects /path → /path/), so all URLs use a trailing slash
 const projectRoutes = projects.flatMap((p) => [`/work/${p.slug}/`, `/ar/work/${p.slug}/`])
+const serviceRoutes = services.flatMap((s) => [`/services/${s.slug}/`, `/ar/services/${s.slug}/`])
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-10-01',
@@ -49,8 +50,8 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    // Dynamic case-study pages; the i18n integration adds hreflang alternates
-    urls: projects.map((p) => `/work/${p.slug}/`),
+    // Dynamic case-study and service pages; the i18n integration adds hreflang alternates
+    urls: [...projects.map((p) => `/work/${p.slug}/`), ...services.map((s) => `/services/${s.slug}/`)],
   },
 
   app: {
@@ -83,7 +84,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/ar/', '/sitemap.xml', ...projectRoutes],
+      routes: ['/', '/ar/', '/sitemap.xml', ...projectRoutes, ...serviceRoutes],
     },
   },
 })

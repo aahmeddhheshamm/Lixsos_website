@@ -170,7 +170,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div v-for="(s, i) in services" :key="s.icon" data-reveal :data-reveal-delay="(i % 3) * 0.1">
+        <NuxtLinkLocale v-for="(s, i) in services" :key="s.slug" :to="`/services/${s.slug}`" class="block" data-reveal :data-reveal-delay="(i % 3) * 0.1">
           <TiltCard class="h-full rounded-3xl">
             <article class="h-full rounded-3xl border border-white/10 bg-ink-900/50 p-8 transition-colors duration-300 hover:border-brand-cyan/40">
               <div class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-brand text-snow shadow-lg shadow-brand-cyan/20 transition-transform duration-500 group-hover:rotate-[-8deg] group-hover:scale-110">
@@ -183,7 +183,7 @@ onBeforeUnmount(() => {
               </ul>
             </article>
           </TiltCard>
-        </div>
+        </NuxtLinkLocale>
       </div>
     </section>
 

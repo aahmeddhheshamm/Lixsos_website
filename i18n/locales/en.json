@@ -42,6 +42,9 @@
       "title": "Our Work — Case Studies",
       "description": "Explore LIXSOS case studies: web platforms, mobile apps, ERP rollouts, marketing campaigns and brand identities for clients across the region."
     },
+    "service": {
+      "title": "{title} Services"
+    },
     "project": {
       "title": "{title} — {category} Case Study"
     },
@@ -107,7 +110,8 @@
     "text": "One partner for product engineering, growth marketing and business operations. Pick a service — or let us build the whole engine.",
     "processEyebrow": "Process",
     "processTitle": "From idea to",
-    "processHi": "impact."
+    "processHi": "impact.",
+    "learnMore": "Learn more"
   },
   "work": {
     "eyebrow": "Portfolio",
@@ -116,6 +120,19 @@
     "text": "A selection of products, platforms and campaigns we’ve shipped with our clients — and the results they delivered.",
     "filter": "Filter projects",
     "next": "Your project could be next."
+  },
+  "service": {
+    "groupsEyebrow": "How we deliver",
+    "groupsTitle": "More ways we drive",
+    "groupsHi": "growth.",
+    "eyebrow": "Service",
+    "featuresEyebrow": "What we offer",
+    "featuresTitle": "Everything included in",
+    "included": "Core expertise",
+    "start": "Start a project",
+    "more": "Explore in detail",
+    "all": "All services",
+    "next": "Next service"
   },
   "project": {
     "client": "Client",
