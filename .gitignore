@@ -10,3 +10,6 @@ dist
 !.env.example
 .DS_Store
 *.log
+# Playwright
+test-results
+playwright-report

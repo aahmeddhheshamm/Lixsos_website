@@ -7,7 +7,13 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "playwright test",
+    "test:build": "nuxt generate && playwright test",
+    "test:responsive": "playwright test tests/responsive.spec.ts",
+    "test:performance": "playwright test tests/performance.spec.ts",
+    "test:translation": "playwright test tests/translation.spec.ts",
+    "test:seo": "playwright test tests/seo.spec.ts"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^10.6.0",
@@ -20,6 +26,7 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/vite": "^4.3.3",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
