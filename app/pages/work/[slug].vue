@@ -149,7 +149,7 @@ useHead(() => ({
         <h2 class="text-3xl font-semibold md:text-4xl">{{ $t('project.highlights') }}</h2>
         <ul class="mt-5 space-y-3">
           <li v-for="h in l(project.highlights)" :key="h" class="flex items-center gap-3 border-b border-white/10 pb-3 text-lg text-slate-200">
-            <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-cyan/15 text-xs text-brand-cyan">✓</span>
+            <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-xs text-slate-100">✓</span>
             {{ h }}
           </li>
         </ul>
@@ -175,7 +175,7 @@ useHead(() => ({
           <span class="font-display text-4xl font-semibold text-white transition-transform duration-500 group-hover:translate-x-3 rtl:group-hover:-translate-x-3 md:text-7xl">
             {{ l(next.title) }}
           </span>
-          <span class="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white text-2xl text-ink-950 transition-transform duration-500 group-hover:rotate-[-45deg] rtl:group-hover:rotate-45">
+          <span class="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-primary text-2xl text-slate-100 transition-transform duration-500 group-hover:rotate-[-45deg] rtl:group-hover:rotate-45">
             {{ $t('common.arrow') }}
           </span>
         </div>

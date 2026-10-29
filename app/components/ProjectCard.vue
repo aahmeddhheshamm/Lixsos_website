@@ -69,7 +69,7 @@ const bg = computed(
           <p class="mt-2 text-sm text-muted">{{ l(project.summary) }}</p>
         </div>
         <span
-          class="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/15 text-white transition-all duration-300 rtl:-scale-x-100 group-hover:rotate-[-45deg] rtl:group-hover:rotate-45 group-hover:border-transparent group-hover:bg-white group-hover:text-ink-950"
+          class="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/15 text-white transition-all duration-300 rtl:-scale-x-100 group-hover:rotate-[-45deg] rtl:group-hover:rotate-45 group-hover:border-transparent group-hover:bg-primary group-hover:text-slate-100"
           aria-hidden="true"
         >
           →

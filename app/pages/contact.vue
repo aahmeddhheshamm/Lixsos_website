@@ -62,11 +62,11 @@ const submit = async () => {
 
     <section class="container-x grid gap-12 lg:grid-cols-12">
       <div class="space-y-6 lg:col-span-4" data-reveal="left">
-        <a :href="`mailto:${site.email}`" class="glass group block rounded-3xl p-7 transition hover:border-brand-cyan/50">
+        <a :href="`mailto:${site.email}`" class="glass group block rounded-3xl p-7 transition hover:border-primary">
           <span class="text-xs uppercase tracking-widest text-muted">{{ $t('contact.email') }}</span>
           <span class="mt-2 block font-display text-2xl text-white transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1">{{ site.email }}</span>
         </a>
-        <a :href="`tel:${site.phone.replace(/\s/g, '')}`" class="glass group block rounded-3xl p-7 transition hover:border-brand-cyan/50">
+        <a :href="`tel:${site.phone.replace(/\s/g, '')}`" class="glass group block rounded-3xl p-7 transition hover:border-primary">
           <span class="text-xs uppercase tracking-widest text-muted">{{ $t('contact.phone') }}</span>
           <span class="mt-2 block font-display text-2xl text-white transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1"><bdi dir="ltr">{{ site.phone }}</bdi></span>
         </a>
@@ -79,7 +79,6 @@ const submit = async () => {
 
       <div class="lg:col-span-8" data-reveal="right">
         <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink-900/60 p-8 md:p-12">
-          <div class="absolute -end-24 -top-24 h-72 w-72 rounded-full bg-brand-violet/25 blur-3xl" />
 
           <div v-if="sent" class="swap-in relative py-16 text-center">
             <LogoMark :size="90" animated class="mx-auto" />
@@ -110,8 +109,8 @@ const submit = async () => {
                   v-for="i in interests"
                   :key="i"
                   type="button"
-                  class="rounded-full border px-4 py-2 text-sm transition"
-                  :class="form.interests.includes(i) ? 'border-transparent bg-gradient-brand text-snow' : 'border-white/15 text-slate-300 hover:border-white/40'"
+                  class="rounded-full border px-4 py-2 text-sm transition cursor-pointer"
+                  :class="form.interests.includes(i) ? 'border-transparent bg-gradient-brand text-snow' : 'border-white/15 text-slate-300 hover:border-primary'"
                   :aria-pressed="form.interests.includes(i)"
                   @click="toggle(i)"
                 >
@@ -146,7 +145,7 @@ const submit = async () => {
 }
 .field input,
 .field textarea {
-  @apply w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white placeholder:text-slate-500 outline-none transition focus:border-brand-cyan/60 focus:bg-white/[0.05] focus:ring-4 focus:ring-brand-cyan/10;
+  @apply w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white placeholder:text-slate-500 outline-none transition focus:border-primary focus:bg-white/[0.05] focus:ring-primary;
 }
 [dir='rtl'] .field input[dir='ltr'] {
   text-align: right;

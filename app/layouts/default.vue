@@ -1,6 +1,5 @@
 <template>
   <div class="noise relative min-h-screen">
-    <CursorGlow />
     <AppHeader />
     <main class="relative z-10">
       <slot />

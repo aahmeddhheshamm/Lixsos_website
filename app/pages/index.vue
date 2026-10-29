@@ -68,9 +68,7 @@ onBeforeUnmount(() => {
   <div>
     <!-- HERO -->
     <section class="relative flex min-h-[100svh] items-center overflow-hidden pt-12">
-   
-      <!-- <div class="grid-bg absolute inset-0" /> -->
-      <div class="container-x relative grid items-center gap-16 lg:grid-cols-12">
+         <div class="container-x relative grid items-center gap-16 lg:grid-cols-12">
         <div class="lg:col-span-7">
       
           <h1 class="mt-8 text-5xl font-semibold leading-[1.02] sm:text-6xl md:text-7xl">
@@ -100,7 +98,7 @@ onBeforeUnmount(() => {
           <div class="relative mx-auto aspect-square w-full max-w-md">
             <div class="absolute inset-0 animate-spin-slow rounded-full border border-dashed border-white/15" />
             <div class="absolute inset-10 animate-spin-slow rounded-full border border-brand-cyan/20 [animation-direction:reverse]" />
-            <div class="absolute inset-24 rounded-full bg-gradient-brand opacity-30 blur-2xl" />
+            <div class="absolute inset-24 rounded-full bg-gradient-brand opacity-20 blur-2xl" />
             <div class="absolute inset-0 grid place-items-center">
               <span class="absolute h-40 w-40 animate-pulse-ring rounded-full border border-brand-cyan/50" />
               <span class="absolute h-40 w-40 animate-pulse-ring rounded-full border border-brand-violet/50 [animation-delay:1.2s]" />
@@ -148,7 +146,7 @@ onBeforeUnmount(() => {
       <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <NuxtLinkLocale v-for="(s, i) in services" :key="s.slug" :to="`/services/${s.slug}`" class="block" data-reveal :data-reveal-delay="(i % 3) * 0.1">
           <TiltCard class="h-full rounded-3xl">
-            <article class="h-full rounded-3xl border border-white/10 bg-ink-900/50 p-8 transition-colors duration-300 hover:border-brand-cyan/40">
+            <article class="h-full rounded-3xl border border-white/10 bg-ink-900/50 p-8 transition-colors duration-300 hover:border-primary">
               <div class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-brand text-snow shadow-lg shadow-brand-cyan/20 transition-transform duration-500 group-hover:rotate-[-8deg] group-hover:scale-110">
                 <ServiceIcon :name="s.icon" />
               </div>
@@ -181,7 +179,6 @@ onBeforeUnmount(() => {
     <!-- ERP TEASER -->
     <section class="container-x mt-32">
       <div class="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-ink-900/60 p-8 md:p-16">
-        <div class="absolute -end-32 -top-32 h-96 w-96 rounded-full bg-brand-violet/30 blur-[120px]" />
         <div class="relative grid items-center gap-14 lg:grid-cols-2">
           <div>
             <SectionHeading :eyebrow="$t('home.erpEyebrow')" title="">
@@ -190,7 +187,7 @@ onBeforeUnmount(() => {
             <p class="mt-6 text-lg text-muted" data-reveal>{{ $t('home.erpText') }}</p>
             <ul class="mt-8 grid grid-cols-2 gap-3">
               <li v-for="(m, i) in erpModules.slice(0, 6)" :key="m.name.en" class="flex items-center gap-2 text-sm text-slate-300" data-reveal :data-reveal-delay="i * 0.05">
-                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-cyan/15 text-[0.65rem] text-brand-cyan">✓</span>
+                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary text-[0.65rem] text-slate-100">✓</span>
                 {{ l(m.name) }}
               </li>
             </ul>
@@ -208,7 +205,7 @@ onBeforeUnmount(() => {
 
     <!-- PROCESS -->
     <section class="container-x mt-32">
-      <SectionHeading :eyebrow="$t('home.processEyebrow')" title="" center>
+      <SectionHeading  title="" center>
         <template #title>{{ $t('home.processTitle') }} <span class="text-gradient">{{ $t('home.processHi') }}</span></template>
       </SectionHeading>
       <ol class="relative mt-16 grid gap-6 md:grid-cols-4">

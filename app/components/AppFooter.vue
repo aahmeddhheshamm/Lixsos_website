@@ -29,7 +29,7 @@ const socialIcons: Record<string, string> = {
               :href="href"
               target="_blank"
               rel="noopener"
-              class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-300 transition hover:-translate-y-1 hover:border-brand-cyan hover:text-white"
+              class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-slate-300 transition hover:-translate-y-1 hover:border-primary hover:text-white"
               :aria-label="name"
             >
               <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path :d="socialIcons[name]" /></svg>

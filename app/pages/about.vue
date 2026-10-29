@@ -28,9 +28,9 @@ usePageSeo({
           <template #title>{{ $t('about.storyTitle') }} <span class="text-gradient">{{ $t('about.storyHi') }}</span></template>
         </SectionHeading>
         <p class="mt-6 text-lg leading-relaxed text-muted" data-reveal>{{ $t('about.storyText') }}</p>
-        <div class="mt-10 grid grid-cols-2 gap-8">
+        <!-- <div class="mt-10 grid grid-cols-2 gap-8">
           <StatCounter v-for="s in stats.slice(0, 2)" :key="s.value" v-bind="s" />
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -41,7 +41,7 @@ usePageSeo({
         <div
           v-for="(v, i) in values"
           :key="v.title.en"
-          class="group rounded-3xl border border-white/10 bg-ink-900/40 p-8 transition duration-500 hover:-translate-y-1 hover:border-brand-cyan/40"
+          class="group rounded-3xl border border-white/10 bg-ink-900/40 p-8 transition duration-500 hover:-translate-y-1 hover:border-primary"
           data-reveal
           :data-reveal-delay="(i % 2) * 0.1"
         >

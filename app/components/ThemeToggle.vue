@@ -6,7 +6,7 @@ const isLight = computed(() => theme.value === 'light')
 <template>
   <button
     type="button"
-    class="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full border border-white/15 text-slate-200 transition hover:border-brand-cyan/60 hover:text-white"
+    class="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full border border-white/15 text-slate-200 transition hover:border-primary hover:text-white"
     :aria-label="isLight ? $t('nav.themeDark') : $t('nav.themeLight')"
     :title="isLight ? $t('nav.themeDark') : $t('nav.themeLight')"
     @click="toggleTheme"

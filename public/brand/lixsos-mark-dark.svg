@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="211 113 578 772" width="231.2" height="308.8" fill="none">
+  <title>LIXSOS</title>
+  <g stroke="#0065ff" stroke-width="38">
+        <g stroke-linecap="round">
+          <path d="M432.8 432.8 L265 265" />
+          <path d="M567.2 432.8 L703.2 296.8" />
+          <path d="M432.8 567.2 L296.8 701.2" />
+          <path d="M567.2 567.2 L735 733" />
+        </g>
+        <g stroke-linejoin="miter" stroke-linecap="butt">
+          <path d="M265 265 V163 H345" />
+          <path d="M735 733 V835 H655" />
+        </g>
+        <circle cx="500" cy="500" r="90" stroke-width="36" />
+        <g>
+          <circle cx="380" cy="163" r="35" stroke-width="30" />
+          <circle cx="735" cy="265" r="38" stroke-width="32" />
+          <circle cx="265" cy="733" r="38" stroke-width="32" />
+          <circle cx="620" cy="835" r="35" stroke-width="30" />
+        </g>
+      </g>
+      <circle cx="500" cy="500" r="27" fill="#ffffff" />
+</svg>

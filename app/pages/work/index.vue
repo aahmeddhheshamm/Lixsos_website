@@ -27,8 +27,8 @@ const filtered = computed(() =>
           :key="c"
           role="tab"
           :aria-selected="active === c"
-          class="relative rounded-full border px-5 py-2 text-sm transition-all duration-300"
-          :class="active === c ? 'border-transparent bg-white text-ink-950' : 'border-white/15 text-slate-300 hover:border-white/40 hover:text-white'"
+          class="relative rounded-full border px-5 py-2 text-sm transition-all duration-300 cursor-pointer"
+          :class="active === c ? 'border-transparent bg-primary text-slate-100' : 'border-white/15 text-slate-300 hover:border-primary hover:text-white'"
           @click="active = c"
         >
           {{ $t(`categories.${c}`) }}

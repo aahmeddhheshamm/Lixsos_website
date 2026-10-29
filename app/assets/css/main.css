@@ -9,7 +9,7 @@
     --color-ink-800: #12183f;
     --color-ink-700: #1c2354;
     /* One brand colour: the old cyan/blue/violet names all point at primary */
-    --color-primary: #2b7fff;
+    --color-primary: #0065ff;
     --color-brand-cyan: var(--color-primary);
     --color-brand-blue: var(--color-primary);
     --color-brand-violet: var(--color-primary);
@@ -75,7 +75,11 @@
 
 @layer components {
     .container-x {
-        @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+        @apply mx-auto w-full max-w-7xl px-5;
+        /* Variants live in @variant blocks: CSS formatters add a space after `sm:` / `hover:` inside @apply, which breaks the build */
+        @variant sm {
+            @apply px-8;
+        }
     }
     /* Kept under their old names so templates don't change; both are now solid primary */
     .text-gradient {
@@ -92,10 +96,18 @@
     }
     .btn-primary {
         background: var(--color-primary);
-        @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 text-snow shadow-[0_0_40px_-10px_rgba(43,127,255,0.7)] hover:shadow-[0_0_60px_-6px_rgba(43,127,255,0.8)] hover:-translate-y-0.5;
+        @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 text-snow;
+        box-shadow: 0 0 40px -10px rgb(43 127 255 / 0.7);
+        @variant hover {
+            @apply -translate-y-0.5;
+            box-shadow: 0 0 60px -6px rgb(43 127 255 / 0.8);
+        }
     }
     .btn-ghost {
-        @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 border border-white/15 text-white hover:border-brand-cyan/60 hover:bg-white/5;
+        @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 border border-white/15 text-white;
+        @variant hover {
+            @apply border-primary text-primary;
+        }
     }
     .grid-bg {
         background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
@@ -200,7 +212,6 @@ html.light {
     --color-slate-200: #1d2446;
     --color-slate-300: #384066;
     --color-slate-500: #8c93b2;
-    --color-brand-cyan: #06b6d4;
     --grid-line: rgb(11 16 48 / 0.05);
     --logo-core: #222a55;
 }

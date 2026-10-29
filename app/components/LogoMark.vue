@@ -12,13 +12,13 @@ withDefaults(defineProps<{ size?: number; animated?: boolean }>(), { size: 40, a
     aria-hidden="true"
     :class="{ 'logo-animated': animated }"
   >
-    <g stroke="#2b7fff" stroke-width="38">
-      <!-- Arms -->
+    <g stroke="#0065ff" stroke-width="38">
+      <!-- Arms stop at the circle rings, which are hollow -->
       <g stroke-linecap="round">
-        <path class="trace" d="M500 500 L265 265" />
-        <path class="trace" d="M500 500 L735 265" />
-        <path class="trace" d="M500 500 L265 733" />
-        <path class="trace" d="M500 500 L735 733" />
+        <path class="trace" d="M432.8 432.8 L265 265" />
+        <path class="trace" d="M567.2 432.8 L703.2 296.8" />
+        <path class="trace" d="M432.8 567.2 L296.8 701.2" />
+        <path class="trace" d="M567.2 567.2 L735 733" />
       </g>
       <!-- Square elbows -->
       <g stroke-linejoin="miter" stroke-linecap="butt">
@@ -26,9 +26,9 @@ withDefaults(defineProps<{ size?: number; animated?: boolean }>(), { size: 40, a
         <path class="trace" d="M735 733 V835 H655" />
       </g>
       <!-- Hub -->
-      <circle class="hub" cx="500" cy="500" r="90" stroke-width="36" fill="#0c0f26" />
+      <circle class="hub" cx="500" cy="500" r="90" stroke-width="36" />
       <!-- End nodes -->
-      <g fill="#0c0f26">
+      <g>
         <circle class="node" cx="380" cy="163" r="35" stroke-width="30" />
         <circle class="node" cx="735" cy="265" r="38" stroke-width="32" />
         <circle class="node" cx="265" cy="733" r="38" stroke-width="32" />
@@ -42,7 +42,7 @@ withDefaults(defineProps<{ size?: number; animated?: boolean }>(), { size: 40, a
 <style scoped>
 /* White in dark mode, muted navy in light mode (see --logo-core in main.css) */
 .core {
-  fill: var(--logo-core);
+  fill: #0065ff;
   transition: fill 0.4s ease;
 }
 .logo-animated .trace {

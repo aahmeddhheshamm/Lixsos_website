@@ -1,0 +1,11 @@
+{
+  // CSS formatters add spaces inside Tailwind's @apply (e.g. `hover: text-primary`), which breaks the build.
+  // The Tailwind extension opens .css files as `tailwindcss`, so turn formatting off for both.
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+  "[tailwindcss]": {
+    "editor.formatOnSave": false
+  },
+  "css.lint.unknownAtRules": "ignore"
+}

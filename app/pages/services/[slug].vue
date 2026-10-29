@@ -71,18 +71,18 @@ useHead(() => ({
 
     <!-- Features -->
     <section class="container-x mt-32">
-      <SectionHeading :eyebrow="$t('service.featuresEyebrow')" title="">
+      <SectionHeading title="">
         <template #title>{{ $t('service.featuresTitle') }} <span class="text-gradient">{{ l(service.title) }}</span></template>
       </SectionHeading>
       <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="(f, i) in service.features"
           :key="f.title.en"
-          class="rounded-3xl border border-white/10 bg-ink-900/50 p-8 transition-colors duration-300 hover:border-brand-cyan/40"
+          class="rounded-3xl border border-white/10 bg-ink-900/50 p-8 transition-colors duration-300 hover:border-primary"
           data-reveal
           :data-reveal-delay="(i % 3) * 0.1"
         >
-          <span class="grid h-10 w-10 place-items-center rounded-full bg-brand-cyan/15 text-brand-cyan">✓</span>
+          <span class="grid h-10 w-10 place-items-center rounded-full bg-primary text-slate-100">✓</span>
           <h3 class="mt-6 text-2xl font-semibold">{{ l(f.title) }}</h3>
           <p class="mt-3 leading-relaxed text-muted">{{ l(f.text) }}</p>
         </div>
@@ -98,7 +98,7 @@ useHead(() => ({
         <div
           v-for="(g, i) in service.groups"
           :key="g.title.en"
-          class="rounded-3xl border border-white/10 bg-ink-900/50 p-8 transition-colors duration-300 hover:border-brand-cyan/40"
+          class="rounded-3xl border border-white/10 bg-ink-900/50 p-8 transition-colors duration-300 hover:border-primary"
           data-reveal
           :data-reveal-delay="i * 0.1"
         >
@@ -106,7 +106,7 @@ useHead(() => ({
           <h3 class="mt-6 text-2xl font-semibold">{{ l(g.title) }}</h3>
           <ul class="mt-6 space-y-4">
             <li v-for="item in g.items" :key="item.title.en" class="flex gap-3 border-b border-white/10 pb-4 last:border-0 last:pb-0">
-              <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-cyan/15 text-xs text-brand-cyan">✓</span>
+              <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-xs text-slate-100">✓</span>
               <div>
                 <p class="text-slate-200">{{ l(item.title) }}</p>
                 <p v-if="item.text" class="mt-1 text-sm leading-relaxed text-muted">{{ l(item.text) }}</p>
@@ -149,7 +149,7 @@ useHead(() => ({
           <span class="font-display text-4xl font-semibold text-white transition-transform duration-500 group-hover:translate-x-3 rtl:group-hover:-translate-x-3 md:text-7xl">
             {{ l(next.title) }}
           </span>
-          <span class="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white text-2xl text-ink-950 transition-transform duration-500 group-hover:rotate-[-45deg] rtl:group-hover:rotate-45">
+          <span class="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-primary text-2xl text-slate-100 transition-transform duration-500 group-hover:rotate-[-45deg] rtl:group-hover:rotate-45">
             {{ $t('common.arrow') }}
           </span>
         </div>

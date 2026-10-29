@@ -38,7 +38,7 @@ useHead(() => ({
         v-for="(s, i) in services"
         :key="s.slug"
         :to="`/services/${s.slug}`"
-        class="group relative grid items-center gap-8 overflow-hidden rounded-[2rem] border border-white/10 bg-ink-900/40 p-8 transition-colors duration-500 hover:border-brand-cyan/40 md:grid-cols-12 md:p-12"
+        class="group relative grid items-center gap-8 overflow-hidden rounded-[2rem] border border-white/10 bg-ink-900/40 p-8 transition-colors duration-500 hover:border-primary md:grid-cols-12 md:p-12"
         data-reveal
       >
         <div class="pointer-events-none absolute inset-0 bg-gradient-brand opacity-0 transition-opacity duration-700 group-hover:opacity-[0.07]" />
@@ -56,9 +56,9 @@ useHead(() => ({
         </div>
         <ul class="space-y-3 md:col-span-4 md:col-start-9">
           <li v-for="p in l(s.points)" :key="p" class="flex items-center gap-3 border-b border-white/10 pb-3 text-slate-200">
-            <span class="h-1.5 w-1.5 rounded-full bg-brand-cyan" /> {{ p }}
+            <span class="h-1.5 w-1.5 rounded-full bg-primary" /> {{ p }}
           </li>
-          <li class="pt-2 text-sm font-medium text-brand-cyan">{{ $t('services.learnMore') }} {{ $t('common.arrow') }}</li>
+          <li class="pt-2 text-sm font-medium text-primary">{{ $t('services.learnMore') }} {{ $t('common.arrow') }}</li>
         </ul>
       </NuxtLinkLocale>
     </section>

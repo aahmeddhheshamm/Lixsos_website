@@ -53,7 +53,7 @@ useHead({
       <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <TiltCard v-for="(m, i) in erpModules" :key="m.name.en" class="rounded-3xl" data-reveal :data-reveal-delay="(i % 4) * 0.08">
           <div class="h-full rounded-3xl border border-white/10 bg-ink-900/50 p-7 transition-colors hover:border-brand-violet/50">
-            <span class="font-display text-sm text-brand-cyan">{{ String(i + 1).padStart(2, '0') }}</span>
+            <span class="font-display text-sm text-primary">{{ String(i + 1).padStart(2, '0') }}</span>
             <h3 class="mt-4 text-xl font-semibold">{{ l(m.name) }}</h3>
             <p class="mt-2 text-sm leading-relaxed text-muted">{{ l(m.text) }}</p>
           </div>
@@ -77,7 +77,7 @@ useHead({
           data-reveal
           :data-reveal-delay="i * 0.06"
         >
-          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-cyan/10 text-brand-cyan">✦</span>
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-primary text-slate-100">✦</span>
           <h3 class="mt-4 text-lg font-semibold">{{ l(f.title) }}</h3>
           <p class="mt-1 text-sm text-muted">{{ l(f.text) }}</p>
         </div>
@@ -108,7 +108,7 @@ useHead({
             </div>
             <ul class="mt-8 space-y-3">
               <li v-for="f in l(plan.features)" :key="f" class="flex items-center gap-3 text-sm text-slate-200">
-                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-cyan/15 text-[0.65rem] text-brand-cyan">✓</span>
+                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary text-[0.65rem] text-slate-100">✓</span>
                 {{ f }}
               </li>
             </ul>
