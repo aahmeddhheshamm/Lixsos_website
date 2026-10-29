@@ -6,10 +6,6 @@ withDefaults(defineProps<{ eyebrow?: string; title: string; text?: string; cente
 
 <template>
   <div :class="center ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'">
-    <span v-if="eyebrow" class="eyebrow" data-reveal>
-      <span class="h-1.5 w-1.5 rounded-full bg-brand-cyan" />
-      {{ eyebrow }}
-    </span>
     <h2 class="mt-5 text-4xl font-semibold leading-[1.05] md:text-6xl" data-reveal data-reveal-delay="0.1">
       <slot name="title">{{ title }}</slot>
     </h2>

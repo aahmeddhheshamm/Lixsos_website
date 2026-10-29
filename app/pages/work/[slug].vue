@@ -85,7 +85,6 @@ useHead(() => ({
     <section class="container-x">
       <div class="relative overflow-hidden rounded-[2rem] border border-white/10" :class="project.image ? 'aspect-[16/9]' : 'aspect-[16/8]'" data-reveal="scale">
         <div class="absolute inset-0" :style="{ background: bg }" data-parallax="0.08" />
-        <div class="grid-bg absolute inset-0" />
 
         <!-- Real screenshot in a browser frame -->
         <div v-if="project.image" class="absolute inset-x-[6%] bottom-0 top-[8%] overflow-hidden rounded-t-2xl border border-white/20 bg-ink-950 shadow-2xl">

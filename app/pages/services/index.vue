@@ -29,7 +29,7 @@ useHead(() => ({
 
 <template>
   <div>
-    <PageHero :eyebrow="$t('services.eyebrow')" :title="$t('services.title')" :text="$t('services.text')">
+    <PageHero :title="$t('services.title')" :text="$t('services.text')">
       <template #title>{{ $t('services.title') }} <span class="text-gradient">{{ $t('services.hi') }}</span> {{ $t('services.after') }}</template>
     </PageHero>
 

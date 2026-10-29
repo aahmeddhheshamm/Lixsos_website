@@ -9,10 +9,11 @@ usePageSeo({
   description: () => t('seo.contact.description'),
 })
 
-const interests = computed(() => t('contact.interests').split(','))
-const budgets = ['< $5k', '$5k – $15k', '$15k – $50k', '$50k+']
+const toast = useToast()
 
-const form = reactive({ name: '', email: '', company: '', interests: [] as string[], budget: '', message: '' })
+const interests = computed(() => t('contact.interests').split(','))
+
+const form = reactive({ name: '', email: '', company: '', interests: [] as string[], message: '' })
 const sent = ref(false)
 const sending = ref(false)
 
@@ -21,12 +22,35 @@ const toggle = (i: string) => {
   idx === -1 ? form.interests.push(i) : form.interests.splice(idx, 1)
 }
 
-// Demo only: wire this up to your API / email service.
+// The site is static (GitHub Pages), so submissions go through FormSubmit, which emails them to site.email
 const submit = async () => {
   sending.value = true
-  await new Promise((r) => setTimeout(r, 900))
-  sending.value = false
-  sent.value = true
+  try {
+    const raw = await $fetch<{ success: string | boolean } | string>(`https://formsubmit.co/ajax/${site.email}`, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: {
+        name: form.name,
+        email: form.email,
+        company: form.company || '-',
+        interests: form.interests.join(', ') || '-',
+        message: form.message,
+        _subject: `New project enquiry from ${form.name}`,
+        _replyto: form.email,
+        _template: 'table',
+        _captcha: 'false',
+      },
+    })
+    // FormSubmit doesn't always send a JSON content type, so the body can arrive as a string
+    const res = typeof raw === 'string' ? JSON.parse(raw) : raw
+    if (String(res.success) !== 'true') throw new Error('FormSubmit rejected the submission')
+    sent.value = true
+    toast.show(t('contact.thanksText'))
+  } catch {
+    toast.show(t('contact.error'), 'error')
+  } finally {
+    sending.value = false
+  }
 }
 </script>
 
@@ -93,22 +117,6 @@ const submit = async () => {
                 >
                   {{ i }}
                 </button>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend class="mb-3 text-sm text-muted">{{ $t('contact.budget') }}</legend>
-              <div class="flex flex-wrap gap-2">
-                <label
-                  v-for="b in budgets"
-                  :key="b"
-                  class="cursor-pointer rounded-full border px-4 py-2 text-sm transition"
-                  :class="form.budget === b ? 'border-brand-cyan bg-brand-cyan/10 text-white' : 'border-white/15 text-slate-300 hover:border-white/40'"
-                  dir="ltr"
-                >
-                  <input v-model="form.budget" type="radio" name="budget" :value="b" class="sr-only">
-                  {{ b }}
-                </label>
               </div>
             </fieldset>
 

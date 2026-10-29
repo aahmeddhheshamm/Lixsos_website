@@ -1,7 +1,6 @@
 <script setup lang="ts">
 // The LIXSOS "X" circuit icon, drawn to match the brand artwork (1000×1000 grid).
 withDefaults(defineProps<{ size?: number; animated?: boolean }>(), { size: 40, animated: false })
-const id = useId()
 </script>
 
 <template>
@@ -13,15 +12,7 @@ const id = useId()
     aria-hidden="true"
     :class="{ 'logo-animated': animated }"
   >
-    <defs>
-      <linearGradient :id="`lg-${id}`" gradientUnits="userSpaceOnUse" x1="250" y1="400" x2="750" y2="600">
-        <stop offset="0" stop-color="#22d3ee" />
-        <stop offset="0.5" stop-color="#3b82f6" />
-        <stop offset="1" stop-color="#8b5cf6" />
-      </linearGradient>
-    </defs>
-
-    <g :stroke="`url(#lg-${id})`" stroke-width="38">
+    <g stroke="#2b7fff" stroke-width="38">
       <!-- Arms -->
       <g stroke-linecap="round">
         <path class="trace" d="M500 500 L265 265" />

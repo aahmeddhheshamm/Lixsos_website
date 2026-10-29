@@ -91,7 +91,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   height: 2px;
   width: 0;
   border-radius: 2px;
-  background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+  background: var(--color-primary);
   transition: all 0.35s ease;
   transform: translateX(-50%);
 }

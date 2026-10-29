@@ -34,6 +34,6 @@ const onLeave = () => {
   transform-style: preserve-3d;
 }
 .spot {
-  background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgb(34 211 238 / 0.12), transparent 50%);
+  background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgb(43 127 255 / 0.12), transparent 50%);
 }
 </style>

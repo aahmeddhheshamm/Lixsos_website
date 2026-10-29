@@ -48,7 +48,7 @@ const rows = [
               <span
                 v-for="(b, i) in bars"
                 :key="i"
-                class="bar flex-1 rounded-t bg-linear-to-t from-brand-blue to-brand-cyan"
+                class="bar flex-1 rounded-t bg-primary"
                 :style="{ height: `${b}%`, animationDelay: `${i * 0.06}s` }"
               />
             </div>

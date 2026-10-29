@@ -32,6 +32,6 @@ onBeforeUnmount(() => {
     ref="el"
     aria-hidden="true"
     class="pointer-events-none fixed left-0 top-0 z-0 hidden h-[600px] w-[600px] rounded-full opacity-40 blur-3xl md:block"
-    style="background: radial-gradient(circle, rgb(34 211 238 / 0.18), rgb(139 92 246 / 0.12) 40%, transparent 70%)"
+    style="background: radial-gradient(circle, rgb(43 127 255 / 0.18), transparent 70%)"
   />
 </template>

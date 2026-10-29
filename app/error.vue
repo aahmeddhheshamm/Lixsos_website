@@ -5,7 +5,7 @@ const props = defineProps<{ error: NuxtError }>()
 const { t } = useI18n()
 const localePath = useLocalePath()
 
-useSeoMeta({ title: () => `${props.error.statusCode} — ${t('error.title')}`, robots: 'noindex' })
+useSeoMeta({ title: () => `${props.error.statusCode}: ${t('error.title')}`, robots: 'noindex' })
 
 // The error page renders outside app.vue, so set lang/dir here too
 const i18nHead = useLocaleHead({ seo: false })

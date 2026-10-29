@@ -67,24 +67,12 @@ onBeforeUnmount(() => {
 <template>
   <div>
     <!-- HERO -->
-    <section class="relative flex min-h-[100svh] items-center overflow-hidden pt-28">
-      <div class="absolute inset-0 opacity-70">
-        <NetworkCanvas />
-      </div>
-      <div class="grid-bg absolute inset-0" />
-      <div class="absolute -start-40 top-20 h-[30rem] w-[30rem] rounded-full bg-brand-cyan/20 blur-[140px]" />
-      <div class="absolute -end-40 bottom-0 h-[34rem] w-[34rem] rounded-full bg-brand-violet/25 blur-[140px]" />
-
+    <section class="relative flex min-h-[100svh] items-center overflow-hidden pt-12">
+   
+      <!-- <div class="grid-bg absolute inset-0" /> -->
       <div class="container-x relative grid items-center gap-16 lg:grid-cols-12">
         <div class="lg:col-span-7">
-          <span class="eyebrow hero-word" style="--i: 0">
-            <span class="relative flex h-2 w-2">
-              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-cyan opacity-75" />
-              <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-cyan" />
-            </span>
-            {{ $t('home.eyebrow') }}
-          </span>
-
+      
           <h1 class="mt-8 text-5xl font-semibold leading-[1.02] sm:text-6xl md:text-7xl">
             <span class="sr-only">{{ $t('home.headline') }} {{ words[0] }}</span>
             <span aria-hidden="true">
@@ -116,23 +104,11 @@ onBeforeUnmount(() => {
             <div class="absolute inset-0 grid place-items-center">
               <span class="absolute h-40 w-40 animate-pulse-ring rounded-full border border-brand-cyan/50" />
               <span class="absolute h-40 w-40 animate-pulse-ring rounded-full border border-brand-violet/50 [animation-delay:1.2s]" />
-              <div class="glass grid h-44 w-44 animate-float place-items-center rounded-[2.5rem]">
+              <div class=" grid h-44 w-44 animate-float place-items-center rounded-[2.5rem]">
                 <LogoMark :size="120" animated />
               </div>
             </div>
-            <!-- Orbiting chips -->
-            <div class="glass absolute start-0 top-12 animate-float rounded-2xl px-4 py-3 text-sm [animation-delay:-1s]">
-              <div class="text-xs text-muted">{{ $t('home.chipProjects') }}</div>
-              <div class="font-display text-xl font-semibold text-white" dir="ltr">120+</div>
-            </div>
-            <div class="glass absolute bottom-16 end-0 animate-float rounded-2xl px-4 py-3 text-sm [animation-delay:-3s]">
-              <div class="text-xs text-muted">{{ $t('home.chipRoas') }}</div>
-              <div class="font-display text-xl font-semibold text-gradient" dir="ltr">6.8×</div>
-            </div>
-            <div class="glass absolute bottom-4 start-10 animate-float rounded-2xl px-4 py-3 text-sm [animation-delay:-4.5s]">
-              <div class="text-xs text-muted">{{ $t('home.chipUptime') }}</div>
-              <div class="font-display text-xl font-semibold text-white" dir="ltr">99.9%</div>
-            </div>
+        
           </div>
         </div>
       </div>
@@ -140,7 +116,7 @@ onBeforeUnmount(() => {
       <div class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted md:flex">
         {{ $t('home.scroll') }}
         <span class="relative h-10 w-6 rounded-full border border-white/20">
-          <span class="absolute left-1/2 top-2 h-2 w-1 -translate-x-1/2 animate-bounce rounded-full bg-brand-cyan" />
+          <span class="absolute left-1/2 top-2 h-2 w-1 -translate-x-1/2 animate-bounce rounded-full bg-primary" />
         </span>
       </div>
     </section>
@@ -154,11 +130,11 @@ onBeforeUnmount(() => {
     </section> -->
 
     <!-- STATS -->
-    <section class="container-x mt-32">
+    <!-- <section class="container-x mt-32">
       <div class="grid grid-cols-2 gap-10 rounded-[2rem] border border-white/10 bg-ink-900/40 p-10 md:grid-cols-4 md:p-14">
         <StatCounter v-for="(s, i) in stats" :key="s.value" v-bind="s" data-reveal :data-reveal-delay="i * 0.1" />
       </div>
-    </section>
+    </section> -->
 
     <!-- SERVICES -->
     <section class="container-x mt-32">

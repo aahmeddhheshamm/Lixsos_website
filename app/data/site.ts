@@ -5,17 +5,17 @@ export const site = {
   shortName: 'LIXSOS',
   url: 'https://lixsos.com',
   description: {
-    en: 'LIXSOS Technologies is a software development and digital marketing agency building web & mobile products, growth campaigns and LIXSOS ERP — the all-in-one business platform.',
-    ar: 'ليكسوس للتكنولوجيا شركة برمجيات وتسويق رقمي نبني مواقع وتطبيقات وحملات نمو، ونظام LIXSOS ERP — المنصة المتكاملة لإدارة الأعمال.',
+    en: 'LIXSOS Technologies is a software development and digital marketing agency building web & mobile products, growth campaigns and LIXSOS ERP, the all-in-one business platform.',
+    ar: 'ليكسوس للتكنولوجيا شركة برمجيات وتسويق رقمي نبني مواقع وتطبيقات وحملات نمو، ونظام LIXSOS ERP، المنصة المتكاملة لإدارة الأعمال.',
   } as L,
-  email: 'hello@lixsos.com',
+  email: 'support@lixsos.com',
   phone: '+20 128 936 3389',
   address: { en: 'Cairo, Egypt', ar: 'القاهرة، مصر' } as L,
   socials: {
-    linkedin: 'https://www.linkedin.com/company/lixsos',
-    instagram: 'https://www.instagram.com/lixsos',
-    x: 'https://x.com/lixsos',
-    behance: 'https://www.behance.net/lixsos',
+    x: 'https://x.com/lix_sos',
+    instagram: 'https://www.instagram.com/lix.sos',
+    facebook: 'https://www.facebook.com/share/1ABJgY9gtq/',
+    snapchat: 'https://www.snapchat.com/add/lixsos22',
   },
 }
 
@@ -75,8 +75,8 @@ export const services: Service[] = [
     slug: 'mobile-apps',
     title: { en: 'Mobile Apps', ar: 'تطبيقات الموبايل' },
     text: {
-      en: 'Native-feeling iOS and Android apps that users love — from MVP to millions of downloads.',
-      ar: 'تطبيقات iOS وAndroid بتجربة سلسة يحبها المستخدمون — من النسخة الأولى حتى ملايين التحميلات.',
+      en: 'Native-feeling iOS and Android apps that users love, from MVP to millions of downloads.',
+      ar: 'تطبيقات iOS وAndroid بتجربة سلسة يحبها المستخدمون، من النسخة الأولى حتى ملايين التحميلات.',
     },
     points: {
       en: ['Flutter & React Native', 'Real-time features', 'App store launch'],
@@ -95,8 +95,8 @@ export const services: Service[] = [
     more: '/erp',
     title: { en: 'LIXSOS ERP', ar: 'نظام LIXSOS ERP' },
     text: {
-      en: 'Our in-house ERP that unifies finance, inventory, HR, sales and CRM — customised to how you work.',
-      ar: 'نظامنا الخاص لتخطيط موارد المؤسسات يجمع المالية والمخزون والموارد البشرية والمبيعات وإدارة العملاء — ومخصص لطريقة عملك.',
+      en: 'Our in-house ERP that unifies finance, inventory, HR, sales and CRM, customised to how you work.',
+      ar: 'نظامنا الخاص لتخطيط موارد المؤسسات يجمع المالية والمخزون والموارد البشرية والمبيعات وإدارة العملاء، ومخصص لطريقة عملك.',
     },
     points: {
       en: ['Cloud or on-premise', 'Custom modules', 'Arabic & English'],
@@ -163,7 +163,7 @@ export const services: Service[] = [
           },
           {
             title: { en: 'Growth-fueled recommendations', ar: 'توصيات تدفع النمو' },
-            text: { en: 'We don’t just report the data — we prescribe the next winning move.', ar: 'لا نكتفي بعرض البيانات — بل نحدد لك الخطوة الرابحة التالية.' },
+            text: { en: 'We don’t just report the data; we prescribe the next winning move.', ar: 'لا نكتفي بعرض البيانات، بل نحدد لك الخطوة الرابحة التالية.' },
           },
         ],
       },
@@ -212,8 +212,8 @@ export const services: Service[] = [
     slug: 'qa-testing',
     title: { en: 'QA & Testing', ar: 'ضمان الجودة والاختبار' },
     text: {
-      en: 'Manual and automated testing that catches bugs before your users do — so every release ships with confidence.',
-      ar: 'اختبارات يدوية وآلية تكتشف الأخطاء قبل أن يكتشفها عملاؤك — لتُطلق كل إصدار بثقة.',
+      en: 'Manual and automated testing that catches bugs before your users do, so every release ships with confidence.',
+      ar: 'اختبارات يدوية وآلية تكتشف الأخطاء قبل أن يكتشفها عملاؤك، لتُطلق كل إصدار بثقة.',
     },
     points: {
       en: ['Automated & manual testing', 'Performance & load testing', 'Security checks'],
@@ -231,8 +231,8 @@ export const services: Service[] = [
     slug: 'tech-consultation',
     title: { en: 'Tech Consultation', ar: 'الاستشارات التقنية' },
     text: {
-      en: 'Expert advice on architecture, tech stack and digital strategy — the right decisions before you invest.',
-      ar: 'استشارات متخصصة في البنية التقنية واختيار التقنيات والاستراتيجية الرقمية — لتتخذ القرار الصحيح قبل أن تستثمر.',
+      en: 'Expert advice on architecture, tech stack and digital strategy, the right decisions before you invest.',
+      ar: 'استشارات متخصصة في البنية التقنية واختيار التقنيات والاستراتيجية الرقمية، لتتخذ القرار الصحيح قبل أن تستثمر.',
     },
     points: {
       en: ['Architecture & stack review', 'Digital transformation', 'Project scoping & estimates'],
@@ -250,8 +250,8 @@ export const services: Service[] = [
     slug: 'support-maintenance',
     title: { en: 'Support & Maintenance', ar: 'الدعم والصيانة' },
     text: {
-      en: 'We keep your systems fast, secure and up to date after launch — with monitoring and a team on call.',
-      ar: 'نحافظ على أنظمتك سريعة وآمنة ومحدّثة بعد الإطلاق — مع مراقبة مستمرة وفريق جاهز للدعم.',
+      en: 'We keep your systems fast, secure and up to date after launch, with monitoring and a team on call.',
+      ar: 'نحافظ على أنظمتك سريعة وآمنة ومحدّثة بعد الإطلاق، مع مراقبة مستمرة وفريق جاهز للدعم.',
     },
     points: {
       en: ['24/7 monitoring', 'Updates & security patches', 'SLA-backed support'],
@@ -277,7 +277,7 @@ export const processSteps: { title: L; text: L }[] = [
   },
   {
     title: { en: 'Build', ar: 'التطوير' },
-    text: { en: 'Agile sprints with demos every two weeks — no black boxes.', ar: 'دورات عمل مرنة مع عرض للتقدم كل أسبوعين — بشفافية كاملة.' },
+    text: { en: 'Agile sprints with demos every two weeks, no black boxes.', ar: 'دورات عمل مرنة مع عرض للتقدم كل أسبوعين، بشفافية كاملة.' },
   },
   {
     title: { en: 'Launch & Grow', ar: 'الإطلاق والنمو' },
@@ -320,8 +320,8 @@ export const testimonials: { quote: L; name: L; role: L }[] = [
   },
   {
     quote: {
-      en: 'Their marketing team thinks like engineers — every dirham is tracked. Our launch beat every target we set.',
-      ar: 'فريق التسويق لديهم يفكر كالمهندسين — كل جنيه محسوب. تجاوز إطلاقنا كل الأهداف التي وضعناها.',
+      en: 'Their marketing team thinks like engineers: every dirham is tracked. Our launch beat every target we set.',
+      ar: 'فريق التسويق لديهم يفكر كالمهندسين: كل جنيه محسوب. تجاوز إطلاقنا كل الأهداف التي وضعناها.',
     },
     name: { en: 'Omar Fathy', ar: 'عمر فتحي' },
     role: { en: 'Founder, Pulse Fitness', ar: 'المؤسس، بالس فيتنس' },
@@ -346,7 +346,7 @@ export const team: { name: L; role: L; initials: string }[] = [
 export const values: { title: L; text: L }[] = [
   {
     title: { en: 'Craft over shortcuts', ar: 'الإتقان قبل السرعة' },
-    text: { en: 'We sweat the details — clean code, sharp design, measurable results.', ar: 'نهتم بأدق التفاصيل — كود نظيف وتصميم دقيق ونتائج قابلة للقياس.' },
+    text: { en: 'We sweat the details: clean code, sharp design, measurable results.', ar: 'نهتم بأدق التفاصيل: كود نظيف وتصميم دقيق ونتائج قابلة للقياس.' },
   },
   {
     title: { en: 'Radical transparency', ar: 'شفافية كاملة' },
