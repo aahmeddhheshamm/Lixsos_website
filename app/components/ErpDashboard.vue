@@ -28,23 +28,24 @@ const rows = [
           <span class="h-2.5 w-2.5 rounded-full bg-brand-cyan" />
         </div>
       </div>
-      <div class="grid grid-cols-[3.5rem_1fr]">
-        <aside class="flex flex-col items-center gap-4 border-e border-white/10 py-5">
+      <!-- The icon sidebar is decoration: dropped on phones so the data has room -->
+      <div class="grid grid-cols-1 sm:grid-cols-[3.5rem_minmax(0,1fr)]">
+        <aside class="hidden flex-col items-center gap-4 border-e border-white/10 py-5 sm:flex">
           <span v-for="n in 6" :key="n" class="h-7 w-7 rounded-lg" :class="n === 1 ? 'bg-gradient-brand' : 'bg-white/5'" />
         </aside>
-        <div class="space-y-4 p-5">
-          <div class="grid grid-cols-3 gap-3">
-            <div v-for="k in kpis" :key="k.key" class="rounded-xl border border-white/5 bg-white/[0.03] p-3">
-              <div class="text-[0.65rem] text-muted">{{ $t(`erp.dash.${k.key}`) }}</div>
-              <div class="mt-1 font-display text-base font-semibold text-white" dir="ltr">{{ k.value }}</div>
+        <div class="min-w-0 space-y-3 p-3 sm:space-y-4 sm:p-5">
+          <div class="grid grid-cols-3 gap-2 sm:gap-3">
+            <div v-for="k in kpis" :key="k.key" class="min-w-0 rounded-xl border border-white/5 bg-white/[0.03] p-2.5 sm:p-3">
+              <div class="truncate text-[0.65rem] text-muted">{{ $t(`erp.dash.${k.key}`) }}</div>
+              <div class="mt-1 font-display text-sm font-semibold text-white sm:text-base" dir="ltr">{{ k.value }}</div>
               <div class="text-[0.65rem]" dir="ltr" :class="k.delta.startsWith('+') ? 'text-emerald-400 light:text-emerald-600' : 'text-rose-400 light:text-rose-600'">{{ k.delta }}</div>
             </div>
           </div>
-          <div class="rounded-xl border border-white/5 bg-white/[0.03] p-4">
+          <div class="rounded-xl border border-white/5 bg-white/[0.03] p-3 sm:p-4">
             <div class="flex items-center justify-between text-[0.65rem] text-muted">
               <span>{{ $t('erp.dash.sales') }}</span><span>2026</span>
             </div>
-            <div class="mt-4 flex h-28 items-end gap-1.5">
+            <div class="mt-4 flex h-20 items-end gap-1 sm:h-28 sm:gap-1.5">
               <span
                 v-for="(b, i) in bars"
                 :key="i"
@@ -53,9 +54,10 @@ const rows = [
               />
             </div>
           </div>
-          <div class="rounded-xl border border-white/5 bg-white/[0.03] p-3 text-[0.7rem]">
-            <div v-for="r in rows" :key="r.id" class="grid grid-cols-[4.5rem_1fr_4.5rem_4.5rem] items-center gap-2 border-b border-white/5 py-2 last:border-0">
-              <span class="text-muted">{{ r.id }}</span>
+          <!-- Columns size to their content so the client name gets whatever is left; the invoice id hides on phones -->
+          <div class="rounded-xl border border-white/5 bg-white/[0.03] px-3 py-1 text-[0.7rem] sm:py-3">
+            <div v-for="r in rows" :key="r.id" class="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-2 border-b border-white/5 py-2 last:border-0 sm:grid-cols-[auto_minmax(0,1fr)_auto_auto] sm:gap-3">
+              <span class="hidden text-muted sm:inline">{{ r.id }}</span>
               <span class="truncate text-slate-200">{{ r.client }}</span>
               <span class="text-end text-white"><bdi dir="ltr">{{ r.amount }}</bdi></span>
               <span class="justify-self-end rounded-full px-2 py-0.5" :class="r.status === 'paid' ? 'bg-emerald-400/10 text-emerald-300 light:text-emerald-700' : 'bg-amber-400/10 text-amber-300 light:text-amber-700'">{{ $t(`erp.dash.${r.status}`) }}</span>

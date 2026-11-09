@@ -43,11 +43,15 @@ const submit = async () => {
     })
     // FormSubmit doesn't always send a JSON content type, so the body can arrive as a string
     const res = typeof raw === 'string' ? JSON.parse(raw) : raw
-    if (String(res.success) !== 'true') throw new Error('FormSubmit rejected the submission')
+    // FormSubmit explains rejections in `message`, e.g. "This form needs Activation…" for a new address
+    if (String(res.success) !== 'true') throw new Error(res.message || 'FormSubmit rejected the submission')
     sent.value = true
     toast.show(t('contact.thanksText'))
-  } catch {
-    toast.show(t('contact.error'), 'error')
+  } catch (e) {
+    const reason = e instanceof Error ? e.message : String(e)
+    console.error('[contact] Form not sent:', reason)
+    // Visitors get the translated message; during development the toast shows FormSubmit's actual reason
+    toast.show(import.meta.dev ? `${t('contact.error')} (${reason})` : t('contact.error'), 'error')
   } finally {
     sending.value = false
   }
@@ -66,10 +70,11 @@ const submit = async () => {
           <span class="text-xs uppercase tracking-widest text-muted">{{ $t('contact.email') }}</span>
           <span class="mt-2 block font-display text-2xl text-white transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1">{{ site.email }}</span>
         </a>
-        <a :href="`tel:${site.phone.replace(/\s/g, '')}`" class="glass group block rounded-3xl p-7 transition hover:border-primary">
+        <div class="glass group block rounded-3xl p-7 transition hover:border-primary">
           <span class="text-xs uppercase tracking-widest text-muted">{{ $t('contact.phone') }}</span>
-          <span class="mt-2 block font-display text-2xl text-white transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1"><bdi dir="ltr">{{ site.phone }}</bdi></span>
-        </a>
+          <a :href="`tel:${site.phone.replace(/\s/g, '')}`" class="mt-2 block font-display text-2xl text-white transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1"><bdi dir="ltr">{{ site.phone }}</bdi></a>
+          <a :href="`tel:${site.secondPhone.replace(/\s/g, '')}`" class="mt-2 block font-display text-2xl text-white transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1"><bdi dir="ltr">{{ site.secondPhone }}</bdi></a>
+        </div>
         <div class="glass rounded-3xl p-7">
           <span class="text-xs uppercase tracking-widest text-muted">{{ $t('contact.office') }}</span>
           <span class="mt-2 block font-display text-2xl text-white">{{ l(site.address) }}</span>

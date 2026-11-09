@@ -9,7 +9,8 @@ export const site = {
     ar: 'ليكسوس للتكنولوجيا شركة برمجيات وتسويق رقمي نبني مواقع وتطبيقات وحملات نمو، ونظام LIXSOS ERP، المنصة المتكاملة لإدارة الأعمال.',
   } as L,
   email: 'support@lixsos.com',
-  phone: '+20 128 936 3389',
+  phone: '+20 106 419 4473',
+  secondPhone: '+20 102 007 3069',
   address: { en: 'Cairo, Egypt', ar: 'القاهرة، مصر' } as L,
   socials: {
     x: 'https://x.com/lix_sos',

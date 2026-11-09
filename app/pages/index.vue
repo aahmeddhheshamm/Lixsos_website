@@ -178,25 +178,26 @@ onBeforeUnmount(() => {
 
     <!-- ERP TEASER -->
     <section class="container-x mt-32">
-      <div class="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-ink-900/60 p-8 md:p-16">
-        <div class="relative grid items-center gap-14 lg:grid-cols-2">
-          <div>
+      <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-ink-900/60 p-5 sm:p-8 md:rounded-[2.5rem] md:p-12 xl:p-16">
+        <!-- grid-cols-1 + min-w-0: without them the dashboard's min width stretches the column past the card on phones -->
+        <div class="relative grid grid-cols-1 items-center gap-10 md:gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
+          <div class="min-w-0">
             <SectionHeading :eyebrow="$t('home.erpEyebrow')" title="">
               <template #title>{{ $t('home.erpTitle') }} <span class="text-gradient">{{ $t('home.erpHi') }}</span></template>
             </SectionHeading>
-            <p class="mt-6 text-lg text-muted" data-reveal>{{ $t('home.erpText') }}</p>
-            <ul class="mt-8 grid grid-cols-2 gap-3">
+            <p class="mt-6 text-base text-muted sm:text-lg" data-reveal>{{ $t('home.erpText') }}</p>
+            <ul class="mt-8 grid grid-cols-1 gap-3 min-[400px]:grid-cols-2">
               <li v-for="(m, i) in erpModules.slice(0, 6)" :key="m.name.en" class="flex items-center gap-2 text-sm text-slate-300" data-reveal :data-reveal-delay="i * 0.05">
                 <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary text-[0.65rem] text-slate-100">✓</span>
                 {{ l(m.name) }}
               </li>
             </ul>
-            <div class="mt-10 flex flex-wrap gap-4" data-reveal>
+            <div class="mt-10 flex flex-col gap-3 min-[400px]:flex-row min-[400px]:flex-wrap sm:gap-4" data-reveal>
               <NuxtLinkLocale to="/erp" class="btn-primary">{{ $t('home.erpDiscover') }} {{ $t('common.arrow') }}</NuxtLinkLocale>
               <NuxtLinkLocale to="/contact" class="btn-ghost">{{ $t('home.erpDemo') }}</NuxtLinkLocale>
             </div>
           </div>
-          <div data-reveal="right">
+          <div class="mx-auto w-full min-w-0 max-w-2xl lg:max-w-none" data-reveal="right">
             <ErpDashboard />
           </div>
         </div>
